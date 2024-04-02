@@ -1,0 +1,1064 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>ErbieChain Transactions &#8212; Erbie Blockchain</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/local.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'technology/block/transaction';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Merkle Patricia Trie" href="hashtreeroots.html" />
+    <link rel="prev" title="The Building Blocks" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Erbie Blockchain</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">WELCOME TO ERBIE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../preintro.html">Introduction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GET STARTED ERBIE</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../consensus/index.html">Consensus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../consensus/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../consensus/dre.html">Dynamic Random Election Algorithm (DRE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../consensus/pos.html">Weighted Proof of Stake (WPoS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../consensus/bft.html">Byzantine Fault-Tolerant (BFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../consensus/flow.html">Consensus Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../consensus/faq.html">Frequently Asked Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../incentive/index.html">Incentive Layer</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/stake.html">Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/balance.html">Balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/issuance.html">Circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/rewards.html">Incentive Mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/penalties.html">Punishment Mechanisms</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/index.html">Network</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/p2p.html">Blackhole Block Message Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/gossip.html">Gossip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/synch.html">Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">The Building Blocks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ErbieChain Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hashtreeroots.html">Merkle Patricia Trie</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">NON-FUNGIBLE TOKEN</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../snft/nft.html">ChainLayer NFT Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snft/index.html">SNFT Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snft/creator.html">SNFT Creator Role</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DEVELOPER RESOURCES</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../run.html">Run a node</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/docs/wallet/">Limino Wallet</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/erbieio/erb-client">Erbie SDK</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbiescan.io/">Blockchain Explore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../erbiedata.html">Blockchain Data and Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">UPGRADE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../upgrade/index.html">Upgrade History</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">APPENDIX</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/history.html">Document Upgrade History</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/technology/block/transaction.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ErbieChain Transactions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nft-minting">NFT Minting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-format">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snft-nft-transfer">SNFT/NFT Transfer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snft-exchange">SNFT Exchange</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staking-erb">Staking ERB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redeeming-erb">Redeeming ERB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-delegation">Validator Delegation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restoring-weight">Restoring Weight</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Example</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="erbiechain-transactions">
+<h1>ErbieChain Transactions<a class="headerlink" href="#erbiechain-transactions" title="Permalink to this heading">#</a></h1>
+<p>Generally speaking, blockchain systems have two types of transactions: regular transactions and contract transactions. ErbieChain has made extensions on this basis, including SNFT transfer/exchange, ERB staking, and other transactions.</p>
+<section id="nft-minting">
+<h2>NFT Minting<a class="headerlink" href="#nft-minting" title="Permalink to this heading">#</a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this heading">#</a></h3>
+<p>ErbieChain allows users to mint their own NFT resources. The gas fee is around 60000.</p>
+</section>
+<section id="transaction-format">
+<h3>Transaction Format<a class="headerlink" href="#transaction-format" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="n">from</span><span class="p">:</span><span class="n">The</span> <span class="n">sending</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">transaction</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">creator</span> <span class="n">address</span><span class="o">.</span>
+  <span class="n">to</span><span class="p">:</span><span class="n">The</span> <span class="n">sending</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">transaction</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">creator</span> <span class="n">address</span><span class="o">.</span>
+  <span class="n">data</span><span class="p">:{</span>
+       <span class="n">erbie</span><span class="p">:{</span>
+          <span class="nb">type</span><span class="p">:</span><span class="mi">0</span>
+          <span class="n">royalty</span><span class="p">:</span> <span class="n">Royalty</span>
+          <span class="n">meta_url</span><span class="p">:</span> <span class="n">NFT</span> <span class="n">metadata</span> <span class="n">URL</span>
+          <span class="n">exchanger</span><span class="p">:</span> <span class="n">Reserved</span> <span class="n">field</span>
+          <span class="n">version</span><span class="p">:</span><span class="s2">&quot;0.0.1&quot;</span>
+       <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>from</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Send the transaction address, which is the creator’s address.</p></td>
+</tr>
+<tr class="row-odd"><td><p>to</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Send the transaction address, which is the creator’s address.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>Int</p></td>
+<td><p>Transaction type, value: 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>royalty</p></td>
+<td><p>Int</p></td>
+<td><p>Royalty</p></td>
+</tr>
+<tr class="row-even"><td><p>meta_url</p></td>
+<td><p>String</p></td>
+<td><p>NFT metadata address</p></td>
+</tr>
+<tr class="row-odd"><td><p>exchanger</p></td>
+<td><p>String</p></td>
+<td><p>Reserved field, optional.</p></td>
+</tr>
+<tr class="row-even"><td><p>version</p></td>
+<td><p>String</p></td>
+<td><p>Version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">erbie</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;royalty&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;meta_url&quot;</span><span class="p">:</span><span class="s2">&quot;/ipfs/ddfd90be9408b4&quot;</span><span class="p">,</span><span class="s2">&quot;exchanger&quot;</span><span class="p">:</span><span class="s2">&quot;0x5ECa602ab2912ea95835F93555a7eEfaA21246dD&quot;</span><span class="p">,</span><span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;v0.0.1&quot;</span><span class="p">}</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="o">--</span><span class="n">data</span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,</span>
+<span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;0x5ECa602ab2912ea95835F93555a7eEfaA21246dD&quot;</span><span class="p">,</span><span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;0x5ECa602ab2912ea95835F93555a7eEfaA21246dD&quot;</span><span class="p">,</span>
+<span class="s2">&quot;data&quot;</span><span class="p">:</span><span class="s2">&quot;0x776f726d686f6c65733a7b2274797065223a302c22726f79616c7479223a31302c226d6574615f75726c223a222f697066732f</span>
+<span class="mi">6464666439306265393430386234222</span><span class="n">c2265786368616e676572223a2230783545436136303261623239313265613935383335463</span>
+<span class="mi">9333535356137654566614132313234366444222</span><span class="n">c2276657273696f6e223a2276302e302e31227d</span><span class="s2">&quot;}],</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">20211209</span><span class="p">}</span><span class="s1">&#39; 127.0.0.1:8545</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="snft-nft-transfer">
+<h2>SNFT/NFT Transfer<a class="headerlink" href="#snft-nft-transfer" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>Description<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Change the ownership of an SNFT/NFT. The gas fee is around 50000.</p>
+</section>
+<section id="id2">
+<h3>Transaction Format<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="n">from</span><span class="p">:</span> <span class="n">The</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">original</span> <span class="n">SNFT</span><span class="o">/</span><span class="n">NFT</span> <span class="n">owner</span>
+  <span class="n">to</span><span class="p">:</span> <span class="n">The</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">target</span> <span class="n">user</span>
+  <span class="n">data</span><span class="p">:{</span>
+        <span class="n">erbie</span><span class="p">:{</span>
+          <span class="nb">type</span><span class="p">:</span><span class="mi">1</span>
+          <span class="n">nft_address</span><span class="p">:</span> <span class="n">SNFT</span><span class="o">/</span><span class="n">NFT</span> <span class="n">address</span>
+          <span class="n">version</span><span class="p">:</span><span class="s2">&quot;0.0.1&quot;</span>
+        <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>from</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>SNFT/NFT owner address</p></td>
+</tr>
+<tr class="row-odd"><td><p>to</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Destination address for transfer</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>Int</p></td>
+<td><p>Transaction type, value: 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>nft_address</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>The SNFT/NFT address, which can be less than 42 bits in length (including 0x), represents the synthesized SNFT.</p></td>
+</tr>
+<tr class="row-even"><td><p>version</p></td>
+<td><p>String</p></td>
+<td><p>Version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">erbie</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;nft_address&quot;</span><span class="p">:</span><span class="s2">&quot;0x8000000000000000000000000000000000000001&quot;</span><span class="p">,</span><span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;v0.0.1&quot;</span><span class="p">}</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="o">--</span><span class="n">data</span>
+<span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,</span>
+<span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;0x5ECa602ab2912ea95835F93555a7eEfaA21246dD&quot;</span><span class="p">,</span>
+<span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;0xcdcefddfd90be9408b4965341567182ac8f8a91a&quot;</span><span class="p">,</span>
+<span class="s2">&quot;data&quot;</span><span class="p">:</span>
+<span class="s2">&quot;0x776f726d686f6c65733a7b2274797065223a312c226e667461646472657373223a2230786364636566646466643930626</span>
+<span class="mi">5393430386234393635333431353637313832616338663861393162222</span><span class="n">c2276657273696f6e223a2276302e302e31227d</span><span class="s2">&quot;}],</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">20211209</span><span class="p">}</span><span class="s1">&#39; 127.0.0.1:8545</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="snft-exchange">
+<h2>SNFT Exchange<a class="headerlink" href="#snft-exchange" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>Description<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>The SNFT obtained by a Staker is exchanged for ERB. The gas fee range is around 50000.</p>
+</section>
+<section id="id4">
+<h3>Transaction Format<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">from</span><span class="p">:</span><span class="n">SNFT</span> <span class="n">owner</span> <span class="n">address</span>
+    <span class="n">to</span><span class="p">:</span><span class="n">SNFT</span> <span class="n">owner</span> <span class="n">address</span>
+    <span class="n">data</span><span class="p">:{</span>
+        <span class="n">erbie</span><span class="p">:{</span>
+            <span class="nb">type</span><span class="p">:</span><span class="mi">6</span>
+            <span class="n">nft_address</span><span class="p">:</span> <span class="n">SNFT</span> <span class="n">address</span>
+            <span class="n">version</span><span class="p">:</span><span class="s2">&quot;0.0.1&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>from</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>SNFT owner address</p></td>
+</tr>
+<tr class="row-odd"><td><p>to</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>SNFT owner address</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>Int</p></td>
+<td><p>Transaction type, value: 6</p></td>
+</tr>
+<tr class="row-odd"><td><p>nft_address</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>The SNFT address, which can be less than 42 bits in length (including 0x), represents the synthesized SNFT.</p></td>
+</tr>
+<tr class="row-even"><td><p>version</p></td>
+<td><p>String</p></td>
+<td><p>Version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h3>Example<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">erbie</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="s2">&quot;nft_address&quot;</span><span class="p">:</span><span class="s2">&quot;0x8000000000000000000000000000000000000007&quot;</span><span class="p">,</span><span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;v0.0.1&quot;</span><span class="p">}</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="o">--</span><span class="n">data</span>
+<span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,</span>
+<span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;0x44d952db5dfB4CBb54443554F4bB9cbeBee2194c&quot;</span><span class="p">,</span>
+<span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;0x44d952db5dfB4CBb54443554F4bB9cbeBee2194c&quot;</span><span class="p">,</span>
+<span class="s2">&quot;data&quot;</span><span class="p">:</span>
+<span class="s2">&quot;0x776f726d686f6c65733a7b2274797065223a342c226e66745f61646472657373223a2230783830303030303030303030303</span>
+<span class="mi">0303030303030303030303030303030303030303030303030303037222</span><span class="n">c2276657273696f6e223a2276302e302e31227d</span><span class="s2">&quot;}],</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">51888</span><span class="p">}</span><span class="s1">&#39; 127.0.0.1:8561</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="staking-erb">
+<h2>Staking ERB<a class="headerlink" href="#staking-erb" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h3>Description<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>Users can use this transaction to stake ERB when they want to become validators or stakers. They can also delegate their stakes to other accounts. The gas fee is around 70000.</p>
+</section>
+<section id="id7">
+<h3>Transaction Format<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="n">from</span><span class="p">:</span> <span class="n">Staking</span> <span class="n">ERB</span> <span class="n">account</span> <span class="n">address</span>
+  <span class="n">to</span><span class="p">:</span> <span class="n">The</span> <span class="n">staked</span> <span class="n">account</span> <span class="n">address</span>
+  <span class="n">value</span><span class="p">:</span> <span class="n">Staked</span> <span class="n">amount</span>
+  <span class="n">data</span><span class="p">:{</span>
+    <span class="n">erbie</span><span class="p">:{</span>
+        <span class="nb">type</span><span class="p">:</span><span class="mi">9</span>
+        <span class="n">proxy_address</span><span class="p">:</span> <span class="n">The</span> <span class="n">SNFT</span> <span class="n">beneficiary</span>
+        <span class="n">fee_rate</span><span class="p">:</span> <span class="n">Staker</span> <span class="n">Fee</span>
+        <span class="n">name</span><span class="p">:</span> <span class="n">Staker</span> <span class="n">Name</span>
+        <span class="n">url</span><span class="p">:</span> <span class="n">Staker</span> <span class="n">URL</span>
+        <span class="n">version</span><span class="p">:</span><span class="s2">&quot;0.0.1&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>from</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Staking ERB account address</p></td>
+</tr>
+<tr class="row-odd"><td><p>to</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>The staked account address.</p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Staked amount</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>Int</p></td>
+<td><p>Transaction type, value: 9</p></td>
+</tr>
+<tr class="row-even"><td><p>proxy_address</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>The SNFT beneficiary.Optional</p></td>
+</tr>
+<tr class="row-odd"><td><p>fee_rate</p></td>
+<td><p>Int</p></td>
+<td><p>Staker Fee. value: 1~1000</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>String</p></td>
+<td><p>Staker Name.</p></td>
+</tr>
+<tr class="row-odd"><td><p>url</p></td>
+<td><p>String</p></td>
+<td><p>Staker URL.</p></td>
+</tr>
+<tr class="row-even"><td><p>version</p></td>
+<td><p>String</p></td>
+<td><p>Version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h3>Example<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">erbie</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;v0.0.1&quot;</span><span class="p">,</span><span class="s2">&quot;proxy_address&quot;</span><span class="p">:</span><span class="s2">&quot;0x23D85D9B6b366b7670b71049D438b0d88A4e0ca0&quot;</span><span class="p">,</span><span class="s2">&quot;fee_rate&quot;</span><span class="p">:</span><span class="mi">1000</span><span class="p">}</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="o">--</span><span class="n">data</span>
+<span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,</span>
+<span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;0x591813F0D13CE48f0E29081200a96565f466B212&quot;</span><span class="p">,</span>
+<span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;0x591813F0D13CE48f0E29081200a96565f466B212&quot;</span><span class="p">,</span>
+<span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;0x8ac7230489e80000&quot;</span><span class="p">,</span>
+<span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;0x776f726d686f6c65733a7b2274797065223a392c2276657273696f6e223a2276302e302</span>
+<span class="n">e31227d</span><span class="s2">&quot;}],&quot;</span><span class="nb">id</span><span class="s2">&quot;:51888}&#39; 127.0.0.1:8561</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="redeeming-erb">
+<h2>Redeeming ERB<a class="headerlink" href="#redeeming-erb" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h3>Description<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<p>Users can use this transaction to redeem their staked ERB. The gas fee is around 50000.</p>
+</section>
+<section id="id10">
+<h3>Transaction Format<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="n">from</span><span class="p">:</span> <span class="n">Staking</span> <span class="n">ERB</span> <span class="n">account</span> <span class="n">address</span>
+  <span class="n">to</span><span class="p">:</span> <span class="n">Staking</span> <span class="n">ERB</span> <span class="n">account</span> <span class="n">address</span>
+  <span class="n">value</span><span class="p">:</span> <span class="n">Amount</span> <span class="n">to</span> <span class="n">redeem</span>
+  <span class="n">data</span><span class="p">:{</span>
+      <span class="n">erbie</span><span class="p">:{</span>
+          <span class="nb">type</span><span class="p">:</span><span class="mi">10</span>
+          <span class="n">version</span><span class="p">:</span><span class="s2">&quot;0.0.1&quot;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>from</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Staking ERB account address</p></td>
+</tr>
+<tr class="row-odd"><td><p>to</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Staking ERB account address</p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Amount to redeem</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>Int</p></td>
+<td><p>Transaction type, value: 10</p></td>
+</tr>
+<tr class="row-even"><td><p>version</p></td>
+<td><p>String</p></td>
+<td><p>Version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id11">
+<h3>Example<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">erbie</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;v0.0.1&quot;</span><span class="p">}</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="o">--</span><span class="n">data</span>
+<span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,</span>
+<span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;0x591813F0D13CE48f0E29081200a96565f466B212&quot;</span><span class="p">,</span>
+<span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;0x591813F0D13CE48f0E29081200a96565f466B212&quot;</span><span class="p">,</span>
+<span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;0x8ac7230489e80000&quot;</span><span class="p">,</span>
+<span class="s2">&quot;data&quot;</span><span class="p">:</span>
+<span class="s2">&quot;0x776f726d686f6c65733a7b2274797065223a31302c2276657273696f6e223a2276302e302</span>
+<span class="n">e31227d</span><span class="s2">&quot;}],&quot;</span><span class="nb">id</span><span class="s2">&quot;:51888}&#39; 127.0.0.1:8561</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="validator-delegation">
+<h2>Validator Delegation<a class="headerlink" href="#validator-delegation" title="Permalink to this heading">#</a></h2>
+<section id="id12">
+<h3>Description<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<p>Validators can use this transaction to delegate their responsibilities to a proxy account. The gas fee is around 70000.</p>
+</section>
+<section id="id13">
+<h3>Transaction Format<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="n">from</span><span class="p">:</span><span class="n">Validator</span> <span class="n">user</span> <span class="n">address</span>
+  <span class="n">to</span><span class="p">:</span><span class="n">Validator</span> <span class="n">user</span> <span class="n">address</span>
+  <span class="n">data</span><span class="p">:{</span>
+      <span class="n">erbie</span><span class="p">:{</span>
+          <span class="nb">type</span><span class="p">:</span><span class="mi">31</span><span class="p">,</span>
+          <span class="n">proxy_address</span><span class="p">:</span> <span class="n">Proxy</span> <span class="n">address</span>
+          <span class="n">proxy_sign</span><span class="p">:</span> <span class="n">Proxy</span> <span class="n">address</span> <span class="n">signature</span>
+          <span class="n">version</span><span class="p">:</span><span class="s2">&quot;0.0.1&quot;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>from</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Validator user address</p></td>
+</tr>
+<tr class="row-odd"><td><p>to</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Validator user address</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>Int</p></td>
+<td><p>Transaction type, value: 31</p></td>
+</tr>
+<tr class="row-odd"><td><p>proxy_address</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Proxy address</p></td>
+</tr>
+<tr class="row-even"><td><p>proxy_sign</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Proxy address signature</p></td>
+</tr>
+<tr class="row-odd"><td><p>version</p></td>
+<td><p>String</p></td>
+<td><p>Version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id14">
+<h3>Example<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">erbie</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">31</span><span class="p">,</span><span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;v0.0.1&quot;</span><span class="p">,</span><span class="s2">&quot;proxy_address&quot;</span><span class="p">:</span><span class="s2">&quot;0x23D85D9B6b366b7670b71049D438b0d88A4e0ca0&quot;</span><span class="p">,</span><span class="s2">&quot;proxy_sign&quot;</span><span class="p">:</span><span class="s2">&quot;0x006e19f800d2b097892662b7aa9a8af211cfc754d06a17ced72c9ae5766076902ea817bfa33271cdefba01f5a7247f2e0885f8fab78b6fbf42cbe62f600cf5651b&quot;</span><span class="p">}</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="o">--</span><span class="n">data</span>
+<span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,</span>
+<span class="s2">&quot;params&quot;</span><span class="p">:</span>
+<span class="p">[{</span><span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;0x591813F0D13CE48f0E29081200a96565f466B212&quot;</span><span class="p">,</span>
+<span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;0x591813F0D13CE48f0E29081200a96565f466B212&quot;</span><span class="p">,</span>
+<span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;0x776f726d686f6c65733a7b2274797065223a392c2276657273696f6e223a2276302e30</span>
+<span class="mf">2e31227</span><span class="n">d</span><span class="s2">&quot;}],</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">51888</span><span class="p">}</span><span class="s1">&#39; 127.0.0.1:8561</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="restoring-weight">
+<h2>Restoring Weight<a class="headerlink" href="#restoring-weight" title="Permalink to this heading">#</a></h2>
+<section id="id15">
+<h3>Description<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<p>Validators can use this transaction to restore their weight when it falls below 70%. The gas fee is around 70000.</p>
+</section>
+<section id="id16">
+<h3>Transaction Format<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="n">from</span><span class="p">:</span> <span class="n">Validator</span> <span class="n">user</span> <span class="n">address</span>
+  <span class="n">to</span><span class="p">:</span> <span class="n">Validator</span> <span class="n">user</span> <span class="n">address</span>
+  <span class="n">data</span><span class="p">:{</span>
+      <span class="n">erbie</span><span class="p">:{</span>
+          <span class="nb">type</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span>
+          <span class="n">version</span><span class="p">:</span><span class="s2">&quot;0.0.1&quot;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>from</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Validator user address</p></td>
+</tr>
+<tr class="row-odd"><td><p>to</p></td>
+<td><p>String(hexadecimal)</p></td>
+<td><p>Validator user address</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>Int</p></td>
+<td><p>Transaction type, value: 26</p></td>
+</tr>
+<tr class="row-odd"><td><p>version</p></td>
+<td><p>String</p></td>
+<td><p>Version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id17">
+<h3>Example<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">erbie</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;v0.0.1&quot;</span><span class="p">}</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="o">--</span><span class="n">data</span>
+<span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_sendTransaction&quot;,</span>
+<span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;0x591813F0D13CE48f0E29081200a96565f466B212&quot;</span><span class="p">,</span>
+<span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;0x591813F0D13CE48f0E29081200a96565f466B212&quot;</span><span class="p">,</span>
+<span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;776f726d686f6c65733a7b2274797065223a2032362c202276657273696f6e223a202276302e302e31227d&quot;</span><span class="p">}],</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">51888</span><span class="p">}</span><span class="s1">&#39; 127.0.0.1:8561</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Building Blocks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hashtreeroots.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Merkle Patricia Trie</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nft-minting">NFT Minting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-format">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snft-nft-transfer">SNFT/NFT Transfer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snft-exchange">SNFT Exchange</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staking-erb">Staking ERB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redeeming-erb">Redeeming ERB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-delegation">Validator Delegation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restoring-weight">Restoring Weight</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Transaction Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Example</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By @Erbie
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Erbie.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

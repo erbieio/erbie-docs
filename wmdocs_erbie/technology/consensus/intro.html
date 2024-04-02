@@ -1,0 +1,590 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Introduction &#8212; Erbie Blockchain</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/local.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'technology/consensus/intro';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dynamic Random Election Algorithm (DRE)" href="dre.html" />
+    <link rel="prev" title="Consensus" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Erbie Blockchain</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">WELCOME TO ERBIE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../preintro.html">Introduction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GET STARTED ERBIE</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Consensus</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dre.html">Dynamic Random Election Algorithm (DRE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pos.html">Weighted Proof of Stake (WPoS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bft.html">Byzantine Fault-Tolerant (BFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flow.html">Consensus Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../incentive/index.html">Incentive Layer</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/stake.html">Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/balance.html">Balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/issuance.html">Circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/rewards.html">Incentive Mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/penalties.html">Punishment Mechanisms</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/index.html">Network</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/p2p.html">Blackhole Block Message Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/gossip.html">Gossip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/synch.html">Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../block/index.html">The Building Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../block/transaction.html">ErbieChain Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../block/hashtreeroots.html">Merkle Patricia Trie</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">NON-FUNGIBLE TOKEN</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../snft/nft.html">ChainLayer NFT Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snft/index.html">SNFT Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snft/creator.html">SNFT Creator Role</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DEVELOPER RESOURCES</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../run.html">Run a node</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/docs/wallet/">Limino Wallet</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/erbieio/erb-client">Erbie SDK</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbiescan.io/">Blockchain Explore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../erbiedata.html">Blockchain Data and Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">UPGRADE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../upgrade/index.html">Upgrade History</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">APPENDIX</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/history.html">Document Upgrade History</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/technology/consensus/intro.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-consensus">What is Consensus?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-consensus-mechanism">What is a Consensus Mechanism?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-consensus-mechanisms">Types of Consensus Mechanisms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-stake-pos">Proof of Stake (PoS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-proof-of-stake-and-proof-of-work">Overview of Proof of Stake and Proof of Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blockchain">Blockchain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-tree">Block Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-selection-rules">Fork Selection Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewiring-and-reorg">Rewiring and Reorg</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Consensus is a method for building reliable distributed systems using unreliable components.</p></li>
+<li><p>Blockchain-based distributed systems aim to achieve consensus on a single transaction history.</p></li>
+<li><p>Proof of work and proof of stake are not consensus protocols but rather support them.</p></li>
+<li><p>Many blockchain consensus protocols are “forking”.</p></li>
+<li><p>Forked chains use fork selection rules and sometimes reorganize.</p></li>
+<li><p>In a “secure” protocol, nothing bad happens.</p></li>
+<li><p>In a “real-time” protocol, good things always happen.</p></li>
+<li><p>No practical protocol can be permanently secure and always effective.</p></li>
+</ul>
+<section id="what-is-consensus">
+<h2>What is Consensus?<a class="headerlink" href="#what-is-consensus" title="Permalink to this heading">#</a></h2>
+<p>When we talk about consensus, we mean reaching a broad agreement. For example, a group of people go to the movies, if they have no objections to the proposal “watch a certain movie,” then consensus can be reached. If there are objections, they must decide which movie to watch through a certain method. In extreme cases, these people will separate.</p>
+<p>For the ErbieChain, the process of reaching consensus is standardized, and reaching consensus means that at least 50% of the nodes on the network have reached a consensus on the global state of the network.</p>
+</section>
+<section id="what-is-a-consensus-mechanism">
+<h2>What is a Consensus Mechanism?<a class="headerlink" href="#what-is-a-consensus-mechanism" title="Permalink to this heading">#</a></h2>
+<p>A consensus mechanism is a set of protocols, incentives and ideas that enable the nodes of the entire network to reach a consensus on the blockchain state.</p>
+<p>ErbieChain adopts a consensus mechanism based on DRE+WPoS+BFT. The security of its encrypted economy comes from a series of reward and confiscation measures implemented on the locked capital of the staker. This incentive system encourages all pledgers to run the validator nodes honestly and punishes those who behave badly, making it extremely costly to attack the network.</p>
+<p>There is also a protocol that governs how to select honest validators, allowing them to propose or verify blocks, process transactions, and vote to support the view of their chain head. In rare cases, if multiple blocks exist in the vicinity of the chain head, a fork selection mechanism is used to select blocks to form a chain with the “maximum block difficulty value”.</p>
+<p>These parts together form the consensus mechanism.</p>
+</section>
+<section id="types-of-consensus-mechanisms">
+<h2>Types of Consensus Mechanisms<a class="headerlink" href="#types-of-consensus-mechanisms" title="Permalink to this heading">#</a></h2>
+<section id="proof-of-stake-pos">
+<h3>Proof of Stake (PoS)<a class="headerlink" href="#proof-of-stake-pos" title="Permalink to this heading">#</a></h3>
+<p>ErbieChain currently uses a consensus protocol based on Weighted Proof of Stake (WPoS) + BFT + DRE.</p>
+<ul>
+<li><p>Block Creation</p>
+<blockquote>
+<div><p>Validators create blocks. Each block randomly selects a validator as the block proposer. The consensus client of the block proposer packages transactions as “execution loads,” and then they package the “execution load” into consensus data and form a block, which is then sent to other nodes on the ErbieChain network. Such block production receives ERB rewards. In rare cases, there may be multiple possible blocks produced, or nodes may receive blocks at different times. The fork selection algorithm selects the block that gives the formed chain the maximum difficulty value (the normal block difficulty value is 1, and the black hole block difficulty value is 24).</p>
+</div></blockquote>
+</li>
+<li><p>Security</p>
+<blockquote>
+<div><p>The proof of stake system ensures the security of the encrypted economy because an attacker trying to control the entire chain must destroy a large amount of ERB. The incentive mechanism rewards honest pledgers, while the punishment mechanism prevents pledgers from engaging in malicious behavior.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="overview-of-proof-of-stake-and-proof-of-work">
+<h2>Overview of Proof of Stake and Proof of Work<a class="headerlink" href="#overview-of-proof-of-stake-and-proof-of-work" title="Permalink to this heading">#</a></h2>
+<p>It is worth noting that proof of work and proof of stake are not consensus protocols in and of themselves. They are typically (lazily) referred to as consensus protocols, but each protocol is only a promoter of consensus protocols.</p>
+<p>For the main part, proof of work and proof of stake are both anti-Sybil mechanisms that come at a cost to participate in the protocol. This prevents attackers from overwhelming the protocol at low or zero cost.</p>
+<p>However, proof of work and proof of stake are typically closely coupled with fork selection rules and the consensus mechanisms they support. They provide a useful way to allocate weight or score to blockchains: total work done in proof of work; value supporting specific chains in proof of stake.</p>
+<p>Besides these basic factors, proof of work and proof of stake can both support many different consensus protocols, each with its own dynamics and tradeoffs.</p>
+</section>
+<section id="blockchain">
+<h2>Blockchain<a class="headerlink" href="#blockchain" title="Permalink to this heading">#</a></h2>
+<p>Of course, the basic primitive of blockchain technology is a block.</p>
+<p>A block is a set of transactions assembled by a leader (block proposer). The contents of the block (its payload) may vary by protocol.</p>
+<p>Aside from the special genesis block, each block is built upon and points to a parent block. Hence, we eventually choose to call it a blockchain. Regardless of the content of the block, the goal of the protocol is to have all nodes on the network agree on the same history of the blockchain.</p>
+<img alt="../../_images/blockchian.png" src="../../_images/blockchian.png" />
+<p>As shown in the above figure, time moves from left to right, and each block, except for the genesis block, points to the parent block that it builds upon.</p>
+<p>As nodes add their blocks to the top of the chain, the chain grows. This is done by temporarily selecting a “leader,” which is a single node with the authority to extend the chain. In proof of work, the leader is the miner who first solves the proof of work challenge for their block. In ErbieChain’s proof of stake, the leader is pseudo-randomly selected from the active staker pool.</p>
+<p>The leader (often referred to as the block proposer) adds a single block to the chain and has complete responsibility for selecting and ordering the contents of that block.</p>
+<p>The use of blocks is an optimization. In principle, every addition to the chain could be a single transaction, but this would incur huge consensus overhead. So blocks are batches of transactions, and sometimes there is debate about how big these blocks should be. In Bitcoin, block size is limited by the number of data bytes in the block. In ErbieChain’s proof of work chain, block size is limited by the gas limit (i.e. the amount of work required to run transactions in the block) in the block. Block size is limited by hard-coded constants.</p>
+</section>
+<section id="block-tree">
+<h2>Block Tree<a class="headerlink" href="#block-tree" title="Permalink to this heading">#</a></h2>
+<p>Our neat linear chain picture will largely reflect what we see in practice, but not always. Sometimes, due to network latency, dishonest block proposers, or client errors, any given node might see something like the following.</p>
+<img alt="../../_images/blocktree.png" src="../../_images/blocktree.png" />
+<p>In general, we may end up with a block tree instead of a blockchain. Similarly, time moves from left to right, and each block points to its built parent block.</p>
+<p>In a real network, we may end up with something more like a block tree than a blockchain. In this example, few blocks are built on their “obvious” parent.</p>
+<p>Why does the proposer of block C link to A instead of B?</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The proposer of block C may not have received block B when preparing to propose.</p></li>
+<li><p>The proposer of block C may intentionally exclude block B from its chain, such as stealing its transactions or censoring certain transactions in B.</p></li>
+<li><p>The proposer of block C may consider block B to be invalid for some reason.</p></li>
+</ul>
+</div></blockquote>
+<p>The first two reasons cannot be distinguished in a wider network. We only know that C is built on A, but we never know why.</p>
+<p>Similarly, why does the proposer of block D build on B rather than C? Any of the above reasons apply, and we can add another reason:</p>
+<blockquote>
+<div><p>The proposer of block D may have decided on some basis that the wider network is more likely to include B, so building on B for D is more likely to become the final blockchain than building on C.</p>
+</div></blockquote>
+<p>Each branch in the block tree is called a “fork”. Forks naturally occur as a result of network and processing delays. However, they may also occur as a result of client errors, malicious client behavior, or protocol upgrades that make old blocks invalid relative to new rules. The last type is usually called a “hard fork”.</p>
+<p>The existence of forks in consensus protocols is a result of prioritizing liveness over safety, in the terminology discussed below: If you follow nodes on different forks, they will give you different answers about the state of the system. There are non-forking consensus protocols, such as PBFT in the classical consensus world and Tendermint in the blockchain world. These protocols always produce a single linear chain, so they are “secure” in form. However, they sacrifice liveness on asynchronous networks like the Internet: they do not fork but instead come to a complete stop.</p>
+</section>
+<section id="fork-selection-rules">
+<h2>Fork Selection Rules<a class="headerlink" href="#fork-selection-rules" title="Permalink to this heading">#</a></h2>
+<p>As we have seen, for various reasons - network delays, network interruptions, unordered message reception, malicious behavior by peers - nodes in the network ultimately obtain different views of the network state. Ultimately, we want each correct node on the network to agree on the same linear history view, thus having a common view of the system state. The fork selection rules of the protocol bring about this agreement.</p>
+<p>Given a block tree and some decision criteria based on a node’s local network view, the fork selection rule aims to choose the branch that is most likely to eventually enter the final linear canonical chain from all available branches. That is, when a node attempts to converge on a canonical view, it chooses the branch that is least likely to be pruned from the block tree.</p>
+<img alt="../../_images/bifurcate.png" src="../../_images/bifurcate.png" />
+<p>The fork selection rule implicitly selects the branch by choosing the top block (called the head block) of a branch.</p>
+<p>For any correct node, the first criterion of any fork selection rule is that the block it selects must be valid according to the protocol’s rules, and all of its ancestors must be valid. Any invalid blocks are ignored, and any blocks built on top of invalid blocks are themselves invalid.</p>
+<p>In light of this, there are many examples of different fork selection rules.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The proof-of-work protocols in Ethereum and Bitcoin use the “heaviest chain rule”, sometimes called the “longest chain” (although this is not strictly accurate). The head block is the top of the chain, representing the most accumulated “work” done under proof of work.</p></li>
+<li><p>The fork selection rule in Ethereum’s proof-of-stake Casper FFG protocol is “follow the chain containing the highest height plausible checkpoint”.</p></li>
+<li><p>The fork selection rule in the ErbieChain consensus protocol is “follow the chain containing the maximum difficulty value” and never reverts to a final block.</p></li>
+</ul>
+</div></blockquote>
+<p>You may notice that each of these fork selection rules is a way of assigning a numerical score to blocks. The winning block, the head block, has the highest score. The idea is that all correct nodes, when they eventually see a particular block, will explicitly agree that it is the head and choose to follow its branch, regardless of their own view of the network. Hence, all correct nodes will eventually agree on a common view, a canonical chain tracing back to the genesis block.</p>
+</section>
+<section id="rewiring-and-reorg">
+<h2>Rewiring and Reorg<a class="headerlink" href="#rewiring-and-reorg" title="Permalink to this heading">#</a></h2>
+<p>When a node receives a new block (and in the case of proof of stake, votes anew on the blocks), it re-evaluates the fork selection rule based on the new information. Most commonly, the new block will be a child of what it currently considers to be the head block. In this case, the new block will automatically become the updated head block (as long as it is valid).</p>
+<p>However, sometimes the new block may be a descendant of another block in the block tree. (Note that if a node does not yet have the new block’s parent, it will need to request it from its peers, and so on, until it obtains any missing blocks.)</p>
+<p>In any case, running the fork selection rule on an updated block tree may indicate that a head block is on a different branch than the previous head block. When this happens, the node must perform a reorg (short for “rewiring”), also known as a rollback. It kicks out (reverts) any blocks included in its chain before and adopts those blocks on the branch of the new head block.</p>
+<p>In the diagram below, a node has evaluated block F to be the head block, so its chain consists of blocks A, B, D, E, and F. The node knows about block C, but it does not appear in the view of its chain; it is on a side branch.</p>
+<img alt="../../_images/regroup.png" src="../../_images/regroup.png" />
+<p>At this point, the node considers block F to be the best head block, so its chain is [A ← B ← D ← E ← F].</p>
+<p>After a while, the node receives block G, which is not built on the current head block F, but on a different branch block C. Depending on the details of the fork selection rules, the node may still consider F to be a better head block than G and therefore ignore G. However, in this case, we will imagine that the fork selection rules indicate that G is the better head block.</p>
+<p>Blocks D, E, and F are not ancestors of G, so they need to be removed from the node’s canonical chain. Any transactions or information contained in these blocks must be reverted as if they were never received. The node must perform a complete rollback to the state after processing block B.</p>
+<p>After rolling back to B, the node can add blocks C and G to its chain and process them accordingly. After this, the node will have completed the reorganization of its chain.</p>
+<img alt="../../_images/regroup1.png" src="../../_images/regroup1.png" />
+<p>Now, the node considers block G to be the best head block, so its chain must be changed to [A ← B ← C ← G].</p>
+<p>Later, there may be a block H based on F. If the fork selection rules indicate that H should be the new head block, then the node will again perform a reorganization, rolling back the chain to B and broadcasting blocks on the branch of H.</p>
+<p>Due to network delays in block propagation, temporary reorganizations of one or two blocks are not uncommon in proof-of-work and proof-of-stake protocols. Longer reorganizations should be very rare, unless the chain is under attack, or there are errors in the formulation of fork selection rules or in client implementation.</p>
+<hr class="docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Some of the content in this document is quoted from <a class="reference external" href="https://eth2book.info/capella/part2/consensus/preliminaries/">Ethereum</a>.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Consensus</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dre.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dynamic Random Election Algorithm (DRE)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-consensus">What is Consensus?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-consensus-mechanism">What is a Consensus Mechanism?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-consensus-mechanisms">Types of Consensus Mechanisms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-stake-pos">Proof of Stake (PoS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-proof-of-stake-and-proof-of-work">Overview of Proof of Stake and Proof of Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blockchain">Blockchain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-tree">Block Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-selection-rules">Fork Selection Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewiring-and-reorg">Rewiring and Reorg</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By @Erbie
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Erbie.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
