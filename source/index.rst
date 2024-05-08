@@ -30,7 +30,6 @@ Content
    :caption: NON-FUNGIBLE TOKEN
    :titlesonly:
 
-   snft/nft
    snft/index
    snft/creator   
 
@@ -46,8 +45,6 @@ Content
 .. toctree::
    :caption: UPGRADE
    :titlesonly:
-
-   upgrade/index
 
 .. toctree::
    :caption: APPENDIX

@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Document Upgrade History" href="history.html" />
-    <link rel="prev" title="Upgrade History" href="../upgrade/index.html" />
+    <link rel="prev" title="Blockchain Data and Analysis" href="../erbiedata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +183,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NON-FUNGIBLE TOKEN</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../snft/nft.html">ChainLayer NFT Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../snft/index.html">SNFT Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../snft/creator.html">SNFT Creator Role</a></li>
 </ul>
@@ -192,12 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../run.html">Run a node</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/docs/wallet/">Limino Wallet</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/erbieio/erb-client">Erbie SDK</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://www.erbiescan.io/">Blockchain Explore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../erbiedata.html">Blockchain Data and Analysis</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">UPGRADE</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../upgrade/index.html">Upgrade History</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">APPENDIX</span></p>
 <ul class="current nav bd-sidenav">
@@ -351,7 +345,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snft">SNFT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csbt">CSBT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erb">ERB</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus">Consensus</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stake">Stake</a></li>
@@ -372,15 +366,15 @@ document.write(`
                   
   <section id="glossary">
 <h1>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h1>
-<section id="snft">
-<h2>SNFT<a class="headerlink" href="#snft" title="Link to this heading">#</a></h2>
-<p>SNFT is the secondary native token of the ErbieChain blockchain.</p>
-<p>The ErbieChain blockchain automatically mints SNFT, dividing it into 16 equal segments, minting each one separately, and each having a unique identifier on the chain. Each standard block randomly selects four stakers to issue 1 SNFT L0 each as an immediate reward.</p>
+<section id="csbt">
+<h2>CSBT<a class="headerlink" href="#csbt" title="Link to this heading">#</a></h2>
+<p>CSBT is the secondary native token of the ErbieChain blockchain.</p>
+<p>The ErbieChain blockchain automatically mints CSBT, dividing it into 16 equal segments, minting each one separately, and each having a unique identifier on the chain. Each standard block randomly selects four stakers to issue 1 CSBT L0 each as an immediate reward.</p>
 </section>
 <section id="erb">
 <h2>ERB<a class="headerlink" href="#erb" title="Link to this heading">#</a></h2>
 <p>ERB is the primary cryptocurrency of the ErbieChain blockchain.</p>
-<p>It is used to pay for internal transactions, transaction fees in the SNFT marketplace, gas fees, and ongoing storage fees.</p>
+<p>It is used to pay for internal transactions, transaction fees in the CSBT marketplace, gas fees, and ongoing storage fees.</p>
 </section>
 <section id="consensus">
 <h2>Consensus<a class="headerlink" href="#consensus" title="Link to this heading">#</a></h2>
@@ -396,7 +390,7 @@ document.write(`
 </section>
 <section id="staker">
 <h2>Staker<a class="headerlink" href="#staker" title="Link to this heading">#</a></h2>
-<p>Within the ErbieChain ecosystem, there are two roles: Validators and Stakers. Stakers form an additional incentivized role for earning block rewards on the ErbieChain. To facilitate a multi-tiered ecosystem, users can stake ERB to become stakers and become eligible for block rewards. Each block randomly selects four stakers to distribute SNFT as immediate rewards.</p>
+<p>Within the ErbieChain ecosystem, there are two roles: Validators and Stakers. Stakers form an additional incentivized role for earning block rewards on the ErbieChain. To facilitate a multi-tiered ecosystem, users can stake ERB to become stakers and become eligible for block rewards. Each block randomly selects four stakers to distribute CSBT as immediate rewards.</p>
 </section>
 <section id="block">
 <h2>Block<a class="headerlink" href="#block" title="Link to this heading">#</a></h2>
@@ -405,7 +399,7 @@ document.write(`
 <li><p>Validators：11 validators</p></li>
 <li><p>Seal：Block proposer’s signature on the block</p></li>
 <li><p>CommittedSeal：Collection of validator signatures on the block</p></li>
-<li><p>ExchangerAddr：4 Staker addresses that receive the SNFT reward</p></li>
+<li><p>ExchangerAddr：4 Staker addresses that receive the CSBT reward</p></li>
 <li><p>ValidatorAddr：7 Validator addresses that receive the ERB reward</p></li>
 <li><p>RewardSeal：Signature collection of the previous regular block</p></li>
 <li><p>EmptyBlockMessages： Blackhole block messages</p></li>
@@ -429,12 +423,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../upgrade/index.html"
+       href="../erbiedata.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Upgrade History</p>
+        <p class="prev-next-title">Blockchain Data and Analysis</p>
       </div>
     </a>
     <a class="right-next"
@@ -462,7 +456,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snft">SNFT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csbt">CSBT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erb">ERB</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus">Consensus</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stake">Stake</a></li>
