@@ -1,17 +1,17 @@
 Glossary
 -----------
 
-SNFT
+CSBT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SNFT is the secondary native token of the ErbieChain blockchain.
+CSBT is the secondary native token of the ErbieChain blockchain.
 
-The ErbieChain blockchain automatically mints SNFT, dividing it into 16 equal segments, minting each one separately, and each having a unique identifier on the chain. Each standard block randomly selects four stakers to issue 1 SNFT L0 each as an immediate reward.
+The ErbieChain blockchain automatically mints CSBT, dividing it into 16 equal segments, minting each one separately, and each having a unique identifier on the chain. Each standard block randomly selects four stakers to issue 1 CSBT L0 each as an immediate reward.
 
 ERB
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ERB is the primary cryptocurrency of the ErbieChain blockchain.
 
-It is used to pay for internal transactions, transaction fees in the SNFT marketplace, gas fees, and ongoing storage fees.
+It is used to pay for internal transactions, transaction fees in the CSBT marketplace, gas fees, and ongoing storage fees.
 
 Consensus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,7 +27,7 @@ Validators are a crucial component of the ErbieChain network infrastructure. The
 
 Staker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Within the ErbieChain ecosystem, there are two roles: Validators and Stakers. Stakers form an additional incentivized role for earning block rewards on the ErbieChain. To facilitate a multi-tiered ecosystem, users can stake ERB to become stakers and become eligible for block rewards. Each block randomly selects four stakers to distribute SNFT as immediate rewards.
+Within the ErbieChain ecosystem, there are two roles: Validators and Stakers. Stakers form an additional incentivized role for earning block rewards on the ErbieChain. To facilitate a multi-tiered ecosystem, users can stake ERB to become stakers and become eligible for block rewards. Each block randomly selects four stakers to distribute CSBT as immediate rewards.
 
 Block
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -36,7 +36,7 @@ Blocks refer to a combination of transactions and include the hash of the previo
 - Validators：11 validators 
 - Seal：Block proposer's signature on the block 
 - CommittedSeal：Collection of validator signatures on the block
-- ExchangerAddr：4 Staker addresses that receive the SNFT reward 
+- ExchangerAddr：4 Staker addresses that receive the CSBT reward 
 - ValidatorAddr：7 Validator addresses that receive the ERB reward 
 - RewardSeal：Signature collection of the previous regular block 
 - EmptyBlockMessages： Blackhole block messages

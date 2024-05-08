@@ -30,7 +30,6 @@ Content
    :caption: NON-FUNGIBLE TOKEN
    :titlesonly:
 
-   snft/nft
    snft/index
    snft/creator   
 
@@ -41,14 +40,11 @@ Content
    run
    Limino Wallet <https://www.erbie.io/docs/wallet/>
    Erbie SDK <https://github.com/erbieio/erb-client>
-   Blockchain Explore <https://www.erbiescan.io/>
    erbiedata
 
 .. toctree::
    :caption: UPGRADE
    :titlesonly:
-
-   upgrade/index
 
 .. toctree::
    :caption: APPENDIX
