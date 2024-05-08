@@ -41,7 +41,6 @@ Content
    run
    Limino Wallet <https://www.erbie.io/docs/wallet/>
    Erbie SDK <https://github.com/erbieio/erb-client>
-   Blockchain Explore <https://www.erbiescan.io/>
    erbiedata
 
 .. toctree::
