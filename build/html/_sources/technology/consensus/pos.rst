@@ -9,7 +9,7 @@ WPoS is a type of Proof of Stake (PoS) mechanism tailored to the ErbieChain, pri
 
 Validators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To participate in network maintenance and receive block rewards as a validator, users must stake at least 70,000 ERB, and their address will be stored in the world state tree in the backend and sorted by staked token amount and weight.
+To participate in network maintenance and receive block rewards as a validator, users must stake a certain amount of ERB, and their address will be stored in the world state tree in the backend and sorted by staked token amount and weight.
 
 When a black hole block needs to be created, all validators will initiate a message agreeing to propose a black hole block at a certain height. The proposer of the black hole block will collect messages from the entire network. When the stake of the collected messages is greater than 50% of the entire network, a black hole block will be proposed and broadcasted, and other nodes will verify the block. If it is valid, the block will be added to the ErbieChain.
 
