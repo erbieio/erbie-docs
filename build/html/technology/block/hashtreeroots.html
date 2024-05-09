@@ -44,8 +44,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'technology/block/hashtreeroots';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="SNFT Overview" href="../../snft/index.html" />
-    <link rel="prev" title="ErbieChain Transactions" href="transaction.html" />
+    <link rel="next" title="Run a node" href="../../run.html" />
+    <link rel="prev" title="Data structure change" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,16 +175,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../network/synch.html">Synchronization</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">The Building Blocks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="transaction.html">ErbieChain Transactions</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Data structure change</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Merkle Patricia Trie</a></li>
 </ul>
 </li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">NON-FUNGIBLE TOKEN</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../snft/index.html">SNFT Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../snft/creator.html">SNFT Creator Role</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DEVELOPER RESOURCES</span></p>
 <ul class="nav bd-sidenav">
@@ -196,7 +190,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">APPENDIX</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/history.html">Document Upgrade History</a></li>
 </ul>
 
     </div>
@@ -347,9 +340,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-of-merkle-patricia-trie-in-erbiechain">Application of Merkle Patricia Trie in ErbieChain</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account-extension-information">Account Extension Information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snft-information">SNFT Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csbt-information">CSBT Information</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-information">Other Information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snft-storage-introduction">SNFT Storage Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csbt-storage-introduction">CSBT Storage Introduction</a></li>
 </ul>
 </li>
 </ul>
@@ -376,7 +369,7 @@ document.write(`
 <span class="w">    </span><span class="nx">Root</span><span class="w">     </span><span class="nx">common</span><span class="p">.</span><span class="nx">Hash</span><span class="w">                            </span><span class="c1">//Merkle root of the trie</span>
 <span class="w">    </span><span class="nx">CodeHash</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span><span class="w">                                 </span><span class="c1">//Hash of the contract code</span>
 <span class="w">    </span><span class="nx">Worm</span><span class="w">     </span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">WormholesExtension</span><span class="w"> </span><span class="s">`rlp:&quot;nil&quot;`</span><span class="w">  </span><span class="c1">//Account extended information</span>
-<span class="w">    </span><span class="nx">Nft</span><span class="w">      </span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">AccountNFT</span><span class="w">         </span><span class="s">`rlp:&quot;nil&quot;`</span><span class="w">  </span><span class="c1">//SNFT information</span>
+<span class="w">    </span><span class="nx">Csbt</span><span class="w">     </span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">AccountCSBT</span><span class="w">        </span><span class="s">`rlp:&quot;nil&quot;`</span><span class="w">  </span><span class="c1">//csbt information</span>
 <span class="w">    </span><span class="nx">Staker</span><span class="w">   </span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">AccountStaker</span><span class="w">      </span><span class="s">`rlp:&quot;nil&quot;`</span>
 <span class="w">    </span><span class="nx">Extra</span><span class="w">    </span><span class="p">[]</span><span class="kt">byte</span>
 <span class="p">}</span>
@@ -385,72 +378,48 @@ document.write(`
 <p>In addition to the shared first four data information, the following information is mainly saved:</p>
 <ol class="arabic simple">
 <li><p>Account extended information</p></li>
-<li><p>SNFT information</p></li>
+<li><p>CSBT information</p></li>
 <li><p>Validators</p></li>
 <li><p>Stakers</p></li>
-<li><p>SNFT mint sequence number</p></li>
-<li><p>Selected SNFT phase information</p></li>
-<li><p>SNFT information for participating in the competition</p></li>
+<li><p>CSBT mint sequence number</p></li>
 </ol>
 <p>Each leaf node does not contain all of the above data, but only stores some of the information based on the account type.</p>
 <section id="account-extension-information">
 <h3>Account Extension Information<a class="headerlink" href="#account-extension-information" title="Link to this heading">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">WormholesExtension</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">PledgedBalance</span><span class="w">     </span><span class="o">*</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="w">         </span><span class="c1">//Validator pledged amount</span>
-<span class="w">    </span><span class="nx">PledgedBlockNumber</span><span class="w"> </span><span class="o">*</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="w">         </span><span class="c1">//Validator pledged height</span>
-<span class="w">    </span><span class="nx">ExchangerFlag</span><span class="w">      </span><span class="kt">bool</span><span class="w">             </span><span class="c1">//Whether it is a Staker</span>
-<span class="w">    </span><span class="nx">BlockNumber</span><span class="w">        </span><span class="o">*</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="w">         </span><span class="c1">//Staker pledged height</span>
-<span class="w">    </span><span class="nx">ExchangerBalance</span><span class="w">   </span><span class="o">*</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="w">         </span><span class="c1">//Staker pledged amount</span>
-<span class="w">    </span><span class="nx">SNFTAgentRecipient</span><span class="w"> </span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w">   </span><span class="c1">//When receiving SNFT rewards, the owner of SNFT</span>
-<span class="w">    </span><span class="nx">VoteBlockNumber</span><span class="w">    </span><span class="o">*</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="w">         </span><span class="c1">//Block height of the last successful competition for SNFT Creator</span>
-<span class="w">    </span><span class="nx">VoteWeight</span><span class="w">         </span><span class="o">*</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="w">         </span><span class="c1">//Value owned</span>
-<span class="w">    </span><span class="nx">Coefficient</span><span class="w">        </span><span class="kt">uint8</span><span class="w">            </span><span class="c1">//Node online weight</span>
-<span class="w">    </span><span class="c1">// The ratio that exchanger get.</span>
-<span class="w">    </span><span class="nx">FeeRate</span><span class="w">       </span><span class="kt">uint16</span><span class="w">                </span><span class="c1">//Exchange rate</span>
-<span class="w">    </span><span class="nx">ExchangerName</span><span class="w"> </span><span class="kt">string</span><span class="w">                </span><span class="c1">//Exchange name</span>
-<span class="w">    </span><span class="nx">ExchangerURL</span><span class="w">  </span><span class="kt">string</span><span class="w">                </span><span class="c1">//Exchange website</span>
-<span class="w">    </span><span class="c1">// ApproveAddress have the right to handle all nfts of the account</span>
-<span class="w">    </span><span class="nx">ApproveAddressList</span><span class="w"> </span><span class="p">[]</span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w"> </span><span class="c1">//Authorized address list</span>
-<span class="w">    </span><span class="nx">SNFTNoMerge</span><span class="w"> </span><span class="kt">bool</span><span class="w">                    </span><span class="c1">//Whether it is not an automatic merge flag</span>
+<span class="w">    </span><span class="nx">PledgedBalance</span><span class="w">     </span><span class="o">*</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="w">                     </span><span class="c1">//validator&#39;s sum pledged balance</span>
+<span class="w">    </span><span class="nx">PledgedBlockNumber</span><span class="w"> </span><span class="o">*</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="w">                     </span><span class="c1">//the last blocknumber that staker pledged</span>
+<span class="w">    </span><span class="nx">Coefficient</span><span class="w">        </span><span class="kt">uint8</span><span class="w">                        </span><span class="c1">//Node online weight</span>
+<span class="w">    </span><span class="nx">StakerExtension</span><span class="w">    </span><span class="nx">StakersExtensionList</span><span class="w">         </span><span class="c1">//List of validators pledged by staker</span>
+<span class="w">    </span><span class="nx">ValidatorExtension</span><span class="w"> </span><span class="nx">ValidatorsExtensionList</span><span class="w">      </span><span class="c1">//List of STakers pledged to the validator</span>
+<span class="w">    </span><span class="nx">ValidatorProxy</span><span class="w">     </span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w">               </span><span class="c1">// proxy address of validator</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
-<section id="snft-information">
-<h3>SNFT Information<a class="headerlink" href="#snft-information" title="Link to this heading">#</a></h3>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">AccountNFT</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Name</span><span class="w">   </span><span class="kt">string</span><span class="w">                              </span><span class="c1">//SNFT name</span>
-<span class="w">    </span><span class="nx">Symbol</span><span class="w"> </span><span class="kt">string</span><span class="w">                              </span><span class="c1">//SNFT abbreviation</span>
-<span class="w">    </span><span class="nx">Owner</span><span class="w">                 </span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w">       </span><span class="c1">//SNFT owner</span>
-<span class="w">    </span><span class="nx">SNFTRecipient</span><span class="w">         </span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w">       </span><span class="c1">//Staker when receiving SNFT rewards</span>
-<span class="w">    </span><span class="nx">NFTApproveAddressList</span><span class="w"> </span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w">       </span><span class="c1">//SNFT authorized person</span>
-<span class="w">    </span><span class="c1">// MergeLevel is the level of NFT merged</span>
-<span class="w">    </span><span class="nx">MergeLevel</span><span class="w">  </span><span class="kt">uint8</span><span class="w">                          </span><span class="c1">//SNFT merge level</span>
-<span class="w">    </span><span class="nx">MergeNumber</span><span class="w"> </span><span class="kt">uint32</span><span class="w">                         </span><span class="c1">//Number of fragments of SNFT synthesis</span>
-<span class="w">    </span><span class="nx">Creator</span><span class="w">   </span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w">                   </span><span class="c1">//Creator of SNFT</span>
-<span class="w">    </span><span class="nx">Royalty</span><span class="w">   </span><span class="kt">uint16</span><span class="w">                           </span><span class="c1">//SNFT royalty</span>
-<span class="w">    </span><span class="nx">Exchanger</span><span class="w"> </span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w">                   </span><span class="c1">//Exchange at the time of SNFT casting</span>
-<span class="w">    </span><span class="nx">MetaURL</span><span class="w">   </span><span class="kt">string</span><span class="w">                           </span><span class="c1">//Location of SNFT metadata</span>
+<section id="csbt-information">
+<h3>CSBT Information<a class="headerlink" href="#csbt-information" title="Link to this heading">#</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">AccountCSBT</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Owner</span><span class="w">   </span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w">  </span><span class="c1">//owner of csbt</span>
+<span class="w">    </span><span class="nx">Creator</span><span class="w"> </span><span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="w">  </span><span class="c1">//creator of csbt</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="other-information">
 <h3>Other Information<a class="headerlink" href="#other-information" title="Link to this heading">#</a></h3>
-<p>Information on Validators, Stakers, SNFT mint sequence number, selected SNFT phase information, and SNFT information for participating in the competition are all defined in the AccountStaker structure as follows:</p>
+<p>Information on Validators, csbt creators and csbt mint sequence number  are all defined in the AccountStaker structure as follows:</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">AccountStaker</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Mint</span><span class="w">       </span><span class="nx">MintDeep</span><span class="w">                             </span><span class="c1">//SNFT mint sequence number</span>
+<span class="w">    </span><span class="nx">Mint</span><span class="w">       </span><span class="nx">MintDeep</span><span class="w">                             </span><span class="c1">//CSBT mint sequence number</span>
 <span class="w">    </span><span class="nx">Validators</span><span class="w"> </span><span class="nx">ValidatorList</span><span class="w">                        </span><span class="c1">//Validators list pledged by the entire network</span>
-<span class="w">    </span><span class="nx">Stakers</span><span class="w">    </span><span class="nx">StakerList</span><span class="w">                           </span><span class="c1">//Stakers list pledged by the whole network</span>
-<span class="w">    </span><span class="nx">Snfts</span><span class="w">      </span><span class="nx">InjectedOfficialNFTList</span><span class="w">              </span><span class="c1">//Selected SNFT phase information</span>
-<span class="w">    </span><span class="nx">Nominee</span><span class="w">    </span><span class="o">*</span><span class="nx">NominatedOfficialNFT</span><span class="w"> </span><span class="s">`rlp:&quot;nil&quot;`</span><span class="w">    </span><span class="c1">//SNFT information for participating in the competition</span>
+<span class="w">    </span><span class="nx">CSBTCreators</span><span class="w"> </span><span class="nx">StakerList</span><span class="w">                         </span><span class="c1">//creator list who can get csbt first</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
-<section id="snft-storage-introduction">
-<h3>SNFT Storage Introduction<a class="headerlink" href="#snft-storage-introduction" title="Link to this heading">#</a></h3>
-<p>On the ErbieChain, SNFT contains four levels: MergeLevel mentioned above, SNFT fragments - level 0, 16 SNFT fragments can be combined to form SNFT- level 1, 16 SNFT can be combined to form SNFT collection- level 2, and 16 SNFT collections can be combined to form SNFT period - level 3. Each existing SNFT, regardless of its level, is stored in the leaf node of the tree. After each synthesis from a lower level to a higher level, only the leaf node with the smallest address is kept as the synthesis leaf node, and the information on the other 15 leaf nodes will be deleted.</p>
+<section id="csbt-storage-introduction">
+<h3>CSBT Storage Introduction<a class="headerlink" href="#csbt-storage-introduction" title="Link to this heading">#</a></h3>
+<p>On the ErbieChain, each existing CSBT is stored in the leaf node of the tree.</p>
 </section>
 </section>
 </section>
@@ -467,20 +436,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="transaction.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ErbieChain Transactions</p>
+        <p class="prev-next-title">Data structure change</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../snft/index.html"
+       href="../../run.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SNFT Overview</p>
+        <p class="prev-next-title">Run a node</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -502,9 +471,9 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-of-merkle-patricia-trie-in-erbiechain">Application of Merkle Patricia Trie in ErbieChain</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account-extension-information">Account Extension Information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snft-information">SNFT Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csbt-information">CSBT Information</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-information">Other Information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snft-storage-introduction">SNFT Storage Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csbt-storage-introduction">CSBT Storage Introduction</a></li>
 </ul>
 </li>
 </ul>
