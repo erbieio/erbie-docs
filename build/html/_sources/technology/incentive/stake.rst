@@ -25,15 +25,15 @@ Staking Process
 The ErbieChain ecosystem incorporates two staking processes. In essence, these two staking processes represent two distinct roles within the ErbieChain system.
 
 -  Validator
-    To become a validator, a user needs to stake at least 70,000 ERBs. Upon block generation, the validator has a chance to earn 0.16 ERB. If the user stakes as a validator but fails to run a node program, no rewards will be given. The larger the stake in ErbieChain, the higher the chance of receiving a reward.
+    To become a validator, a user needs to stake a certain amount of ERBs to himself, and then stakers can stake more ERBs to the validator. Upon block generation, the validator and the stakers staked to the validator have a chance to earn ERBs. If the user stakes as a validator but fails to run a node program, no rewards will be given. The larger the stake in ErbieChain, the higher the chance of receiving a reward.
 
 -  Staker
-    To obtain the ErbieChain SNFT asset, a user needs to stake a minimum of 700 ERBs. This role doesn't require running a node program. Upon block creation, the staker has an opportunity to earn an SNFT L0 reward. The larger the stake, the higher the likelihood of receiving a reward.
+    To obtain ERB asset but don't have resource to run a erbie node, user can stake ERBs to validators. This role doesn't require running a node program. Upon block creation, the staker also has an opportunity to earn ERBs. The larger the stake, the higher the likelihood of receiving a reward.
 
 Stake Size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each validator in the ErbieChain system must stake at least 70,000 ERB.
+Each validator who can participant verification blocks in the ErbieChain system must lock at least 70,000 ERB.
 
 This figure is a compromise, small enough to allow wide participation, but sufficiently large to prevent an overload of validators. Essentially, by reducing stakes, we may permit stakeholders to operate more expensive hardware on a higher bandwidth network, increasing the risk of centralization.
 
@@ -42,10 +42,10 @@ Stake Redemption
 
 Deposits in the ErbieChain are locked for a fixed period, and the redemption time is highly correlated with block occurrences. The specific wait time for each user may vary due to factors like block behavior.
 
-1. Lock-in Period: Users are permitted to initiate redemption transactions after 1,728 blocks, i.e., when the block height at which the staking occurred surpasses 17,280. For instance, if user A stakes at block height 100, the redemption operation can occur after block height 1,738.
+1. Lock-in Period: Users are permitted to initiate redemption transactions after 17280 blocks(The lockup time may change), i.e., when the block height at which the staking occurred surpasses 17280. For instance, if user A stakes at block height 100, the redemption operation can occur after block height 17380.
 
     Once the redemption operation is completed, the user no longer receives rewards for participating in consensus.
 
-2. Pre-release Period: After initiating the redemption transaction, the user must wait for another 1,728 blocks before retrieving the original deposit.
+2. Pre-release Period: After initiating the redemption transaction, the user must wait for another 17280 blocks before retrieving the original deposit.
 
 

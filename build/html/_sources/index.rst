@@ -24,7 +24,7 @@ Content
    technology/incentive/index
    technology/network/index
    technology/block/index
-  
+
 .. toctree::
    :caption: DEVELOPER RESOURCES
    :titlesonly:

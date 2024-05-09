@@ -181,11 +181,6 @@
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">NON-FUNGIBLE TOKEN</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../snft/index.html">SNFT Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../snft/creator.html">SNFT Creator Role</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DEVELOPER RESOURCES</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../run.html">Run a node</a></li>
@@ -196,7 +191,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">APPENDIX</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/history.html">Document Upgrade History</a></li>
 </ul>
 
     </div>
@@ -372,7 +366,7 @@ document.write(`
 </section>
 <section id="validators">
 <h2>Validators<a class="headerlink" href="#validators" title="Link to this heading">#</a></h2>
-<p>To participate in network maintenance and receive block rewards as a validator, users must stake at least 70,000 ERB, and their address will be stored in the world state tree in the backend and sorted by staked token amount and weight.</p>
+<p>To participate in network maintenance and receive block rewards as a validator, users must stake a certain amount of ERB, and their address will be stored in the world state tree in the backend and sorted by staked token amount and weight.</p>
 <p>When a black hole block needs to be created, all validators will initiate a message agreeing to propose a black hole block at a certain height. The proposer of the black hole block will collect messages from the entire network. When the stake of the collected messages is greater than 50% of the entire network, a black hole block will be proposed and broadcasted, and other nodes will verify the block. If it is valid, the block will be added to the ErbieChain.</p>
 </section>
 <section id="how-to-execute-transactions-in-erbiechain-proof-of-stake">

@@ -181,11 +181,6 @@
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">NON-FUNGIBLE TOKEN</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../snft/index.html">SNFT Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../snft/creator.html">SNFT Creator Role</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DEVELOPER RESOURCES</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../run.html">Run a node</a></li>
@@ -196,7 +191,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">APPENDIX</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/history.html">Document Upgrade History</a></li>
 </ul>
 
     </div>
@@ -360,15 +354,13 @@ document.write(`
   <section id="incentive-mechanisms">
 <h1>Incentive Mechanisms<a class="headerlink" href="#incentive-mechanisms" title="Link to this heading">#</a></h1>
 <p>As mentioned above, the ErbieChain protocol consists of two different types of blocks: ordinary blocks and empty blocks. Only ordinary blocks generate rewards; empty blocks do not yield any rewards.</p>
-<p>According to the economic model design, normal blocks create two types of rewards, ERB and SNFT L0. The ERB for the current block is distributed to the validators of the previous block, while the SNFT reward is distributed to the current block’s stakers. The following diagram provides a brief explanation:</p>
-<img alt="../../_images/blockrewards.png" src="../../_images/blockrewards.png" />
+<p>According to the economic model design, The ERB for the current block is distributed to the validators of the previous block. The validators and stakers split the reward.</p>
 <section id="incentive-allocation">
 <h2>Incentive Allocation<a class="headerlink" href="#incentive-allocation" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>ERB: Each block distributes incentives to 7 Validators, allocating 0.16 ERBs to each rewarded validator. The deflation rate decreases by 15% per year.</p></li>
-<li><p>SNFT: Each block distributes an incentive to 4 Stakers, each rewarded Staker receives one SNFT L0.</p></li>
+<li><p>ERB: Each block distributes incentives to 7 Validators and stakers staked to those validators.</p></li>
 </ul>
-<p>Other Rewards: Users engaged in various activities within ErbieChain’s ecosystem or contributing to ErbieChain have the opportunity to receive incentives such as ERB, SNFT, etc.</p>
+<p>Other Rewards: Users engaged in various activities within ErbieChain’s ecosystem or contributing to ErbieChain have the opportunity to receive incentives such as ERB etc.</p>
 </section>
 </section>
 
