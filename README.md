@@ -10,10 +10,11 @@ This repo houses the Erbie Docs located at [erbie.io/docs](https://www.erbie.io/
 - Finally, run `make html` to build the docs
 
 # Project Board
-----
+----[mint.rst](..%2F..%2Fdoc%2Finterface%2F_sources%2Fmint.rst)
 You can track documentation issues or submit documentation requests directly from this repo.
-
+[mint.rst](..%2F..%2Fdoc%2Finterface%2F_sources%2Fmint.rst)
 # License
 ----
 This project is licensed under the MIT License.
 
+[mint.rst](..%2F..%2Fdoc%2Finterface%2F_sources%2Fmint.rst)[redeem.rst](..%2F..%2Fdoc%2Finterface%2F_sources%2Fredeem.rst)[redeem.rst](..%2F..%2Fdoc%2Finterface%2F_sources%2Fredeem.rst)

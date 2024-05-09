@@ -33,6 +33,7 @@ Content
    Limino Wallet <https://www.erbie.io/docs/wallet/>
    Erbie SDK <https://github.com/erbieio/erb-client>
    erbiedata
+   API/index
 
 .. toctree::
    :caption: UPGRADE
