@@ -6,7 +6,6 @@ As mentioned above, the ErbieChain protocol consists of two different types of b
 According to the economic model design, The ERB for the current block is distributed to the validators of the previous block. The validators and stakers split the reward.
 
 
-
 Incentive Allocation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

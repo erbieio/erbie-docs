@@ -24,15 +24,7 @@ Content
    technology/incentive/index
    technology/network/index
    technology/block/index
-   
-
-.. toctree::
-   :caption: NON-FUNGIBLE TOKEN
-   :titlesonly:
-
-   snft/index
-   snft/creator   
-
+  
 .. toctree::
    :caption: DEVELOPER RESOURCES
    :titlesonly:
@@ -51,5 +43,5 @@ Content
    :titlesonly:
 
    appendix/index
-   appendix/history
+
    
