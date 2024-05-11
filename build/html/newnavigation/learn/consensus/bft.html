@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Byzantine Fault-Tolerant (BFT) &#8212; Erbie Blockchain</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/local.css?v=0b0e7493" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'newnavigation/learn/consensus/bft';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Consensus Process" href="flow.html" />
+    <link rel="prev" title="Weighted Proof of Stake (WPoS)" href="pos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Erbie Blockchain</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../basic/basic.html">What is Erbie?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/glossary.html">Erbie’s Glossary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Learn</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">DRE Consensus</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dre.html">Dynamic Random Election Algorithm (DRE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pos.html">Weighted Proof of Stake (WPoS)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Byzantine Fault-Tolerant (BFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flow.html">Consensus Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../incentive/index.html">Incentive Layer</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/stake.html">Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/balance.html">Balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/issuance.html">Circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/rewards.html">Incentive Mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incentive/penalties.html">Punishment Mechanisms</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/index.html">Network Layer</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/p2p.html">Blackhole Block Message Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/gossip.html">Gossip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/synch.html">Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../block/index.html">Data structure</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../block/hashtreeroots.html">Merkle Patricia Trie</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../guide/run.html">Run a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/staking.html">Staking ERB</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/docs/wallet/">Wallet Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/explorer.html">Block Explorer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSBT</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../csbt/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csbt/datausecase.html">Data Usecase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csbt/assetization.html">Assetization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interfaces</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../interfaces/contractsAPI.html">Smart Contracts API</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../interfaces/OpenAPI/index.html">Erbie’s OpenAPI</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../interfaces/OpenAPI/transfercsbt.html">Transfer CSBT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interfaces/OpenAPI/withdrawerb.html">Withdraw ERB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interfaces/OpenAPI/stake.html">Validator and Staker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interfaces/OpenAPI/unstake.html">Release the pledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interfaces/OpenAPI/recoverweight.html">Recover online weight</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/erbieio/erb-client">SDK of ErbieChain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interfaces/data%26analysis.html">Data and Analysis</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/newnavigation/learn/consensus/bft.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Byzantine Fault-Tolerant (BFT)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#byzantine-generals-problem">Byzantine Generals Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-idea">The core idea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">Solutions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="byzantine-fault-tolerant-bft">
+<h1>Byzantine Fault-Tolerant (BFT)<a class="headerlink" href="#byzantine-fault-tolerant-bft" title="Link to this heading">#</a></h1>
+<p>The Byzantine algorithm is an algorithm used to solve the trust issues that may exist between nodes in distributed systems. It can ensure that under certain conditions, even if some nodes fail or behave maliciously, the nodes can still reach consensus. In this paper, we will explore in depth the background, principles and applications of the Byzantine algorithm.</p>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>In distributed systems, due to the unreliability of each node and the instability of the network, it is often impossible to reach consensus. The Byzantine problem refers to the problem in distributed systems, where nodes cannot reach a consensus due to the failure or malintent of some nodes.The problem was first proposed by Leslie Lamport and others in a 1982 paper called the “Byzantine Generals Problem,” which describes the basic problem consensus systems seek to solve: constructing reliable distributed systems.</p>
+</section>
+<section id="byzantine-generals-problem">
+<h2>Byzantine Generals Problem<a class="headerlink" href="#byzantine-generals-problem" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>We imagine the several legions of the Byzantine army camped outside the enemy city, each legion commanded by its own general. The generals can only communicate with each other through messengers. After observing the enemy, they must agree on a common action plan.</p>
+</div></blockquote>
+<p>This allegory clearly shows that without an overall view - without a god mode - we cannot see the whole situation and make a decision at a glance. We are only one of the generals, and our only source of information about the other generals is the messages we receive - possibly correct messages, or lies, or misunderstandings based on limited information, or messages delayed or modified during transport. We have only very limited local views, but we must have a definite result for the state of the entire system.</p>
+<p>When we draw the charts for blockchains and block trees, it’s easy to assume that this is some kind of ‘state’ of the entire system. But these diagrams can only represent the local view of a single participant in the system. Because we are running on an unreliable network, my node’s view of the system may differ from yours, even temporarily. For example, you will see blocks with different timestamps or different orders than I do, or even blocks that I don’t see.</p>
+<blockquote>
+<div><p>Some generals may be traitors, attempting to prevent the faithful generals from reaching an agreement.</p>
+</div></blockquote>
+<p>These treacherous generals exhibit what we call Byzantine behavior or Byzantine errors. They can act in any arbitrary way: delaying messages, reordering messages, telling outright lies, sending contradictory messages to different recipients, not answering at all, or anything else we can think of. The Byzantine Generals Problem is an algorithmic challenge to create a system which can still achieve consensus despite these kinds of malicious or unreliable actors.</p>
+<img alt="../../../_images/intro1.png" src="../../../_images/intro1.png" />
+<p>I am receiving a large amount of information from other nodes, but I do not know which information is accurate, the order in which they are sent, or if any messages have been lost or simply delayed. Therefore, we need to establish some kind of protocol.</p>
+</section>
+<section id="the-core-idea">
+<h2>The core idea<a class="headerlink" href="#the-core-idea" title="Link to this heading">#</a></h2>
+<p>The core idea of the Byzantine fault-tolerant (BFT) algorithm is to solve the trust problem between nodes through fault-tolerant mechanisms, that is, by introducing enough fault-tolerant mechanisms in the algorithm to ensure its correctness.</p>
+<p>In the BFT algorithm, each node can be a general, and nodes exchange information through message passing to reach a consensus on one issue. Therefore, loyal generals need a reliable rule to provide a result under the following conditions:</p>
+<blockquote>
+<div><p>Consistency: 1.All loyal generals make the same action plan decision [e.g., “attack” or “retreat”].2.A few traitors cannot make loyal generals adopt a bad plan.</p>
+</div></blockquote>
+</section>
+<section id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Link to this heading">#</a></h2>
+<p>Reaching a consensus in such a Byzantine distributed system is not an easy problem to solve, but there have been several successful methods over the years.</p>
+<p>The first mainstream solution is the practical Byzantine fault-tolerant (PBFT) algorithm published by Liskov and Castro in 1999. This relies on a relatively small and limited set of known consensus participants (called replicas). PBFT is always secure, and in the terminology discussed below, it has no fork.</p>
+<p>In 2008, Satoshi Nakamoto invented the “Nakamoto consensus” for Bitcoin using a completely different approach. Instead of limiting participants to a known set, it uses proof of work to select a temporary leader for consensus without requiring permission. Unlike PBFT, Nakamoto consensus allows forks and is technically not secure.</p>
+<p>Many variations of these protocols and other novel alternatives, such as the Avalanche protocol family, have since emerged.</p>
+<p>Existing BFT algorithms have many advantages, such as high transaction throughput, low resource consumption, and ease of understanding. Therefore, adopting BFT algorithms in blockchain systems can greatly improve the TPS of blockchain systems. However, BFT algorithms also have significant disadvantages, such as the number of nodes seriously affecting the efficiency of the algorithm. As the number of nodes increases, the performance will exponentially decrease, and the scalability of nodes is poor. Therefore, it is not suitable for blockchain systems with a large number of nodes. In addition, the BFT algorithm requires that the number of malicious nodes cannot exceed 1/3 of the total number of nodes, which means that the fault tolerance of the BFT algorithm is relatively low, and using this algorithm in public chains is prone to downtime risks.</p>
+<p>ErbieChain uses a combination of WPoS+BFT to address the above issues.</p>
+<ol class="arabic simple">
+<li><p>Nodes need to stake ERB in order to participate in block consensus.</p></li>
+<li><p>At each block time, 11 Validators are chosen from the staking list and use the BFT algorithm to reach consensus on the block.</p></li>
+</ol>
+<p>This not only ensures consensus efficiency, but also ensures that all staking nodes have the opportunity to participate in block generation and consensus.</p>
+<blockquote>
+<div><p>Additionally, to prevent participants from submitting multiple blocks or signing multiple blocks for malicious purposes, ErbieChain has also optimized the BFT algorithm, whereby consensus nodes can only send out a single commit message with their own signature.</p>
+</div></blockquote>
+<hr class="docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Some of the content in this document is quoted from <a class="reference external" href="https://eth2book.info/capella/part2/consensus/preliminaries/">Ethereum</a> .</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Weighted Proof of Stake (WPoS)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="flow.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Consensus Process</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#byzantine-generals-problem">Byzantine Generals Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-idea">The core idea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">Solutions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By @Erbie
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Erbie.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

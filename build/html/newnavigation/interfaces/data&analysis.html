@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data and Analysis &#8212; Erbie Blockchain</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/local.css?v=0b0e7493" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'newnavigation/interfaces/data&analysis';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Recover online weight" href="OpenAPI/recoverweight.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Erbie Blockchain</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic.html">What is Erbie?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/glossary.html">Erbie’s Glossary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../learn/consensus/index.html">DRE Consensus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../learn/consensus/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/consensus/dre.html">Dynamic Random Election Algorithm (DRE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/consensus/pos.html">Weighted Proof of Stake (WPoS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/consensus/bft.html">Byzantine Fault-Tolerant (BFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/consensus/flow.html">Consensus Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/consensus/faq.html">Frequently Asked Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../learn/incentive/index.html">Incentive Layer</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../learn/incentive/stake.html">Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/incentive/balance.html">Balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/incentive/issuance.html">Circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/incentive/rewards.html">Incentive Mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/incentive/penalties.html">Punishment Mechanisms</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../learn/network/index.html">Network Layer</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../learn/network/p2p.html">Blackhole Block Message Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/network/gossip.html">Gossip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/network/synch.html">Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../learn/block/index.html">Data structure</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../learn/block/hashtreeroots.html">Merkle Patricia Trie</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../guide/run.html">Run a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/staking.html">Staking ERB</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/docs/wallet/">Wallet Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/explorer.html">Block Explorer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSBT</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../csbt/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csbt/datausecase.html">Data Usecase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csbt/assetization.html">Assetization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interfaces</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="contractsAPI.html">Smart Contracts API</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="OpenAPI/index.html">Erbie’s OpenAPI</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="OpenAPI/transfercsbt.html">Transfer CSBT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenAPI/withdrawerb.html">Withdraw ERB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenAPI/stake.html">Validator and Staker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenAPI/unstake.html">Release the pledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenAPI/recoverweight.html">Recover online weight</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/erbieio/erb-client">SDK of ErbieChain</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data and Analysis</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/newnavigation/interfaces/data&analysis.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data and Analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data">Basic data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block">Block</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction">Transaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account">Account</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="data-and-analysis">
+<h1>Data and Analysis<a class="headerlink" href="#data-and-analysis" title="Link to this heading">#</a></h1>
+<p>Blockchain explorers are the gateway to the ErbieChain data world. Through blockchain explorers, you can view real-time blocks, transactions, miners, accounts, and other chain-related activities. Read this chapter to understand the data that the block explorer will show you.</p>
+<p>ErbieChain is designed to be transparent, and all information is verifiable. Block explorers provide a visual interface for accessing this information, both on ErbieChain’s mainnet and testnet.</p>
+<p>Data can be divided into basic and aggregate data. Basic data refers to the intuitive data of all activities on the ErbieChain that can be directly obtained from the chain. Aggregate data refers to statistical data aggregated from basic data.</p>
+<p>This article only lists basic data.</p>
+<section id="basic-data">
+<h2>Basic data<a class="headerlink" href="#basic-data" title="Link to this heading">#</a></h2>
+<section id="block">
+<h3>Block<a class="headerlink" href="#block" title="Link to this heading">#</a></h3>
+<p>Every 5 seconds, a new block is added to ErbieChain (unless a block proposer misses their proposal opportunity) so there is a steady stream of data being added to the block explorer. The blocks contain many important pieces of data which you may find useful.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Block height – the block number</p></li>
+<li><p>Timestamp – the time at which the block was proposed</p></li>
+<li><p>Transactions – the number of transactions contained in the block</p></li>
+<li><p>Size – the size of the data in the block (in bytes)</p></li>
+<li><p>Consumed Gas – the total number of gas units consumed by the transactions in the block</p></li>
+<li><p>Gas limit – the total gas limit set by the transactions in the block</p></li>
+<li><p>Other data – any additional data added by Miners to the block</p></li>
+<li><p>Parent hash – the hash of the previous block for the current block</p></li>
+<li><p>Proposer – the Validator selected by algorithm to propose a new block</p></li>
+<li><p>Reward – list of Validators and Stakers who received rewards</p></li>
+<li><p>Delegated account – the delegated account of the Validator who received rewards</p></li>
+<li><p>Transaction list – a detailed list of all the transactions contained in the block</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="transaction">
+<h3>Transaction<a class="headerlink" href="#transaction" title="Link to this heading">#</a></h3>
+<p>Blockchain explorers have become a popular way to track the progress of transactions, since you can obtain detailed transaction information to keep track of the progress. Transaction data includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Transaction hash – the hash generated when the transaction is submitted</p></li>
+<li><p>Transaction type – identifies the type of ErbieChain and general transactions</p></li>
+<li><p>Status – indicates if the transaction is pending, failed, or successful</p></li>
+<li><p>Block height – the block containing the transaction</p></li>
+<li><p>Timestamp – the time when the miner mined the transaction</p></li>
+<li><p>Sender – the account address submitting the transaction</p></li>
+<li><p>Receiver – the recipient address interacting with the transaction or address of the smart contract</p></li>
+<li><p>Value – the total ERB amount transferred</p></li>
+<li><p>Transaction fee – the amount paid to the miner for processing the transaction (calculated based on gas prices * used gas)</p></li>
+<li><p>Consumed gas – the actual number of gas units consumed by the transaction</p></li>
+<li><p>gas price – the price set per gas unit</p></li>
+<li><p>Seller benefit – seller benefit amount for SNFT transactions</p></li>
+<li><p>Input data – any extra information required by the transaction</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="account">
+<h3>Account<a class="headerlink" href="#account" title="Link to this heading">#</a></h3>
+<p>You can access a lot of data about accounts. It is therefore recommended to use multiple accounts so that your assets and value transfers are not easily tracked. The following is the available data for accounts:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Account address – the public address used to send funds</p></li>
+<li><p>ERB balance – the amount of ERB associated with the account</p></li>
+<li><p>Validator delegation – the amount delegated to Validators</p></li>
+<li><p>Online weight – the online weight value of the Validator</p></li>
+<li><p>ERB rewards – the ERB rewards received by the Validator</p></li>
+<li><p>Annual return rate – annual return rate of ERB for the Validator</p></li>
+<li><p>Transaction history – a list of all transactions where the account was the sender or receiver</p></li>
+<li><p>Staker delegation – the amount delegated to Stakers</p></li>
+<li><p>Transaction history – a list of all transactions where the account was the sender or receiver</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="OpenAPI/recoverweight.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Recover online weight</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data">Basic data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block">Block</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction">Transaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account">Account</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By @Erbie
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Erbie.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

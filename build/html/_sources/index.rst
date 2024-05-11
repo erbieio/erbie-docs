@@ -11,38 +11,33 @@ Content
 ======================
 
 .. toctree::
-   :caption: WELCOME TO ERBIE
+   :caption: Basic
    :titlesonly:
 
-   preintro
+   newnavigation/basic/index
 
 .. toctree::
-   :caption: GET STARTED ERBIE
+   :caption: Learn
    :titlesonly:
 
-   technology/consensus/index
-   technology/incentive/index
-   technology/network/index
-   technology/block/index
+   newnavigation/learn/index
 
 .. toctree::
-   :caption: DEVELOPER RESOURCES
+   :caption: Guide
    :titlesonly:
 
-   run
-   Limino Wallet <https://www.erbie.io/docs/wallet/>
-   Erbie SDK <https://github.com/erbieio/erb-client>
-   erbiedata
-   API/index
+   newnavigation/guide/index
 
 .. toctree::
-   :caption: UPGRADE
+   :caption: CSBT
    :titlesonly:
+
+   newnavigation/csbt/index
 
 .. toctree::
-   :caption: APPENDIX
+   :caption: Interfaces
    :titlesonly:
 
-   appendix/index
+   newnavigation/interfaces/index
 
    
