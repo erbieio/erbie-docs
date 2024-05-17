@@ -4,9 +4,9 @@ Erbie is a Layer 1 public blockchain based on the DRE consensus algorithm, chara
 
 To achieve these functionalities, Erbie employs several innovative technologies:
 
-  - **Dynamic Random Election (DRE) Consensus Mechanism:**This is a practical Byzantine fault-tolerant protocol suitable for fully asynchronous environments. The security properties of DRE are post-quantum secure.
+  - **Dynamic Random Election (DRE) Consensus Mechanism**:This is a practical Byzantine fault-tolerant protocol suitable for fully asynchronous environments. The security properties of DRE are post-quantum secure.
 
-  - **Multi-layer Blockchain Architecture:**Composed of the transport layer, blockchain layer, API layer, and application layer, this architecture ensures the security and efficiency of the Erbie network.
+  - **Multi-layer Blockchain Architecture**:Composed of the transport layer, blockchain layer, API layer, and application layer, this architecture ensures the security and efficiency of the Erbie network.
 
 
 On-chain Data Assetization: The block rewards in Erbie consist of the native token ERB and CSBT.

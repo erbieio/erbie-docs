@@ -6,11 +6,55 @@
   <component name="ChangeListManager">
     <list default="true" id="05082f94-1bd8-4bca-bf44-e46a3a9ca0dc" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/newnavigation/basic/basic.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/newnavigation/basic/basic.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/newnavigation/basic/basic.rst" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/newnavigation/basic/basic.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/erbiedata.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/erbiedata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/basic/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/basic/basic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/basic/glossary.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/basic/glossary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/basic/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/basic/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/csbt/assetization.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/csbt/assetization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/csbt/datausecase.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/csbt/datausecase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/csbt/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/csbt/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/csbt/introduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/csbt/introduction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/guide/explorer.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/guide/explorer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/guide/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/guide/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/guide/run.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/guide/run.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/guide/staking.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/guide/staking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/recoverweight.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/recoverweight.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/stake.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/stake.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/transfercsbt.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/transfercsbt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/unstake.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/unstake.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/withdrawerb.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/interfaces/OpenAPI/withdrawerb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/interfaces/contractsAPI.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/interfaces/contractsAPI.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/interfaces/data&amp;analysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/interfaces/data&amp;analysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/interfaces/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/interfaces/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/block/hashtreeroots.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/block/hashtreeroots.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/block/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/block/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/bft.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/bft.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/dre.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/dre.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/flow.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/flow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/pos.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/consensus/pos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/balance.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/balance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/issuance.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/issuance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/penalties.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/penalties.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/rewards.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/rewards.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/stake.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/incentive/stake.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/network/gossip.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/network/gossip.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/network/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/network/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/network/p2p.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/network/p2p.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/learn/network/synch.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/learn/network/synch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/preintro.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/preintro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/newnavigation/basic/basic.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/basic/basic.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/basic/glossary.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/basic/glossary.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/csbt/assetization.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/csbt/assetization.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/csbt/datausecase.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/csbt/datausecase.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/csbt/introduction.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/csbt/introduction.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
