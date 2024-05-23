@@ -15,7 +15,7 @@ Contract Deployment
 
     .. image:: erc20-2.png
 
-4. Record or create a text document to save the necessary auxiliary information for deployment on the host where the erbie program is located. For text files, they can be placed in the default folder specified by the program.
+4. Record or create a text document to save the necessary auxiliary information for deployment on the host where the **erbie** program is located. For text files, they can be placed in the default folder specified by the program.
 
     .. image:: erc20-3.png
 
@@ -44,7 +44,7 @@ Paste the parameters into the program input box to complete the deployment.
 
   - **INFO**
   - **ContractAddress and EvmAddress.**
-    **ContractAddress** is used for regular TTOS money transfer transactions, such as money transfer.
+    **ContractAddress** is used for regular ERB money transfer transactions, such as money transfer.
     **EvmAddress** is used to interact with the contract, such as Token/NFT transfer.
 
 Contract Execution

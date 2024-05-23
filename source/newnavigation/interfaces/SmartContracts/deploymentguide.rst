@@ -1,7 +1,7 @@
 Smart Contract Deployment Guide
 =================================
 
-This chapter introduces how to publish your Token/NFT products or fungible tokens on the erbie main net. Before reading this chapter, please familiarize yourself with information about the Solidity language, the ERC20/ERC721 contract standard. You need to use the Remix tool to compile the contract source code. Make sure you have the contract's source code ready to compile and deploy.
+This chapter introduces how to publish your Token/NFT products or fungible tokens on the **erbie** main net. Before reading this chapter, please familiarize yourself with information about the Solidity language, the ERC20/ERC721 contract standard. You need to use the Remix tool to compile the contract source code. Make sure you have the contract's source code ready to compile and deploy.
 
 Illustrate
 ----------------
@@ -9,7 +9,7 @@ Illustrate
 To deploy a contract, please strictly adhere to the Ethereum ERC20/ERC721 contract standards. The types and methods defined in the contract should be named according to the standard.
 
   - **CAUTION**
-  - erbie blockchain browser currently does not support parsing custom parameter types and function methods.
+  - **erbie** blockchain browser currently does not support parsing custom parameter types and function methods.
 
 The reference code is as follows:
 
@@ -67,13 +67,13 @@ What is required before deploy contracts?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   - A tradable and running Validator
-  - An account with a certain amount of TTOS coins to pay the gas fees generated during the deployment process.
+  - An account with a certain amount of ERB coins to pay the gas fees generated during the deployment process.
   - The binary code of the contract which is Bytecode or Calldata in Remix IDE
   - A string of hexadecimal digits (as shown in the following figure).
 
 .. image:: smart-1.png
 
-  - Start erbie validator node,generated contract folder in current directory of the program.Placed the binary code generated from the contract into the contract file in the directory.
+  - Start **erbie** validator node,generated contract folder in current directory of the program.Placed the binary code generated from the contract into the contract file in the directory.
 
 Example: The content of the contract file is similar to the following figure.
 
@@ -131,7 +131,3 @@ Contract Execution
   4. Enter the input args to run the contract.
   5. Enter the tip to be paid to the contract deployment address. 0 can be entered, but if the Tip is not 0, the tip must not be less than the gas fee.
   6. Enter the fees to be paid to the contract.0 can be entered.
-
-  - **TIPS:**
-
-    **Pay attention to unit conversion** If the balance is displayed as 999.92064300, that is 99,992,064,300 contract transfer units. If you want to pay contract 100TTOS, enter 10,000,000,000; If 100 is entered, the actual payment will be made to the contract 0.000001TTOS.

@@ -11,7 +11,7 @@
 .. toctree::
    :titlesonly:
 
-   Wallet Docs <https://www.erbie.io/docs/wallet/>
+   Wallet Docs <https://www.erbie.io/erbiedocs/wallet/>
 
 .. toctree::
    :titlesonly:

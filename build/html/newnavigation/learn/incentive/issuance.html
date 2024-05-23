@@ -185,7 +185,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../guide/run.html">Run a node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/staking.html">Staking ERB</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/docs/wallet/">Wallet Docs</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/erbiedocs/wallet/">Wallet Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/explorer.html">Block Explorer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CSBT</span></p>
@@ -338,9 +338,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -356,17 +354,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewards-derived-from-circulation">Rewards Derived from Circulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-incentives-for-each-increment">Primary Incentives for Each Increment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-circulation">Total Circulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-s-reward">Validator’s Reward</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -378,112 +365,36 @@ document.write(`
                   
   <section id="circulation">
 <h1>Circulation<a class="headerlink" href="#circulation" title="Link to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Circulation refers to the number of crypto assets minted by the protocol to incentivize its participants.</p></li>
-<li><p>With each block produced, a specific number of ERBs are generated, which is reduced by a certain percentage each year.</p></li>
+<p><strong>The ErbieChain’s Inflation Schedule is uniquely described by three parameters: Initial Inflation Rate, Disinflation Rate and Long-term Inflation Rate.</strong></p>
+<p>A large portion of the ERB issued via inflation will be distributed to stake-holders in proportion to the ERB they have staked. We want to ensure that the Inflation Schedule design results in reasonable Staking Yields for token holders who delegate ERB and for validation service providers (via commissions taken from Staking Yields).</p>
+<p>The primary driver of Staked Yield is the amount of ERB staked divided by the total amount of ERB (% of total ERB staked). Therefore the distribution and delegation of tokens across validators are important factors to understand when determining initial inflation parameters.</p>
+<p>The rate at which we expect network usage to grow, as a consideration to the disinflationary rate. Over time, we plan for inflation to drop and expect that usage will grow.</p>
+<p><strong>Based on these considerations, the Erbie team has formulated the following inflation plan parameters:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Overall token issuance: 600000000 ERB</p></li>
+<li><p>Genesis block initial circulation volume: 300000000ERB</p></li>
+<li><p>Initial Inflation Rate: 8%</p></li>
+<li><p>Disinflation Rate: -8%</p></li>
+<li><p>Long-term Inflation Rate: Infinite trend 0%</p></li>
 </ul>
-<section id="rewards-derived-from-circulation">
-<h2>Rewards Derived from Circulation<a class="headerlink" href="#rewards-derived-from-circulation" title="Link to this heading">#</a></h2>
-<p>The circulating supply is the quantity of ERBs minted by the protocol to incentivize its participants. Taking into account actions such as burning transaction fees, the net increase in supply is sometimes referred to as inflation or supply growth. After each successful creation of standard blocks, seven validators are randomly selected to receive 0.16 ERBs each, and four are randomly chosen to receive one SNFT L0 each from the SNFT staking list.</p>
-</section>
-<section id="primary-incentives-for-each-increment">
-<h2>Primary Incentives for Each Increment<a class="headerlink" href="#primary-incentives-for-each-increment" title="Link to this heading">#</a></h2>
-<p>Incentives for mining (rewards in ERBs for Validators successfully participating in the consensus, and SNFT incentives for Stakers that are proportionally converted to ERBs) are tied to ErbieChain’s inflation curve. This curve starts with 300M ERBs at the genesis block. In the first year, approximately 43.64M ERBs are mined (this number is an estimate as the behavior of users in exchanging assets is unpredictable). In each subsequent year, due to a reduction in mining rewards and a decline in the SNFT exchange rate (15% per year), the yield of ERB will increasingly diminish. After about 20 years from the creation of the network, a total of approximately 279.69M ERBs will have been mined.</p>
-<p>As a result, the total supply in years after start-up is as follows:</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Years After Start-up</p></th>
-<th class="head"><p>Total Supply</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>300M</p></td>
-</tr>
-<tr class="row-odd"><td><p>0-1</p></td>
-<td><p>343.64M</p></td>
-</tr>
-<tr class="row-even"><td><p>1-2</p></td>
-<td><p>380.74M</p></td>
-</tr>
-<tr class="row-odd"><td><p>2-3</p></td>
-<td><p>412.28M</p></td>
-</tr>
-</tbody>
-</table>
-<p>The inflation chart below shows the annual percentage of supply increase due to inflation.</p>
-<img alt="../../../_images/inflation.png" src="../../../_images/inflation.png" />
-</section>
-<section id="total-circulation">
-<h2>Total Circulation<a class="headerlink" href="#total-circulation" title="Link to this heading">#</a></h2>
-<p>Under the ideal conditions we assume, the ErbieChain protocol is designed to have a maximum total supply of 579.69M over 20 years.</p>
-<img alt="../../../_images/total_amount_l1.png" src="../../../_images/total_amount_l1.png" />
-</section>
-<section id="validator-s-reward">
-<h2>Validator’s Reward<a class="headerlink" href="#validator-s-reward" title="Link to this heading">#</a></h2>
-<p>Similarly to the supply calculation, we can calculate the expected annual percentage reward for a validator’s participation in the ErbieChain protocol.</p>
-<p>Given the unique nature of the ErbieChain DRE algorithm, a consensus requires the participation of 11 validators. Using this number as a baseline, assuming a full net staking rate, and considering a certain increase in linear indices, we can generate the following data table.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Stake Rate</p></th>
-<th class="head"><p>Number of Stakers (pre-estimated)</p></th>
-<th class="head"><p>Annual rate of Rateeturn (pre-estimated)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0.30%</p></td>
-<td><p>11</p></td>
-<td><p>406.7%</p></td>
-</tr>
-<tr class="row-odd"><td><p>1.20%</p></td>
-<td><p>99</p></td>
-<td><p>101.7%</p></td>
-</tr>
-<tr class="row-even"><td><p>2.10%</p></td>
-<td><p>174</p></td>
-<td><p>58.1%</p></td>
-</tr>
-<tr class="row-odd"><td><p>3.00%</p></td>
-<td><p>248</p></td>
-<td><p>40.7%</p></td>
-</tr>
-<tr class="row-even"><td><p>3.90%</p></td>
-<td><p>323</p></td>
-<td><p>31.3%</p></td>
-</tr>
-<tr class="row-odd"><td><p>4.80%</p></td>
-<td><p>397</p></td>
-<td><p>25.4%</p></td>
-</tr>
-<tr class="row-even"><td><p>5.70%</p></td>
-<td><p>471</p></td>
-<td><p>21.4%</p></td>
-</tr>
-<tr class="row-odd"><td><p>6.60%</p></td>
-<td><p>546</p></td>
-<td><p>18.5%</p></td>
-</tr>
-<tr class="row-even"><td><p>7.50%</p></td>
-<td><p>620</p></td>
-<td><p>16.3%</p></td>
-</tr>
-<tr class="row-odd"><td><p>8.40%</p></td>
-<td><p>695</p></td>
-<td><p>14.5%</p></td>
-</tr>
-<tr class="row-even"><td><p>9.30%</p></td>
-<td><p>769</p></td>
-<td><p>13.1%</p></td>
-</tr>
-<tr class="row-odd"><td><p>10.20%</p></td>
-<td><p>844</p></td>
-<td><p>12.0%</p></td>
-</tr>
-</tbody>
-</table>
-<p>The curves drawn from the above table are as follows:</p>
-<img alt="../../../_images/validatorincome.png" src="../../../_images/validatorincome.png" />
-</section>
+</div></blockquote>
+<p>These parameters define the proposed Inflation Schedule. Below we show implications of these parameters. These plots only show the impact of inflation issuances given the Inflation Schedule as parameterized above. They do not account for other factors that may impact the Total Supply such as fee/rent burning, slashing or other unforeseen future token destruction events. Therefore, what is presented here is an upper limit on the amount of ERB issued via inflation.</p>
+<blockquote>
+<div><img alt="../../../_images/issuance-1.jpg" src="../../../_images/issuance-1.jpg" />
+</div></blockquote>
+<p>In the above graph we see the annual inflation rate percentage over time, given the inflation parameters proposed above.</p>
+<blockquote>
+<div><img alt="../../../_images/issuance-2.jpg" src="../../../_images/issuance-2.jpg" />
+</div></blockquote>
+<p>Similarly, here we see the Total Current Supply of ERB [MM] over time, assuming an initial Total Current Supply of 300000000ERB (i.e. for this example, taking the Total Current Supply as of 2024-05-31 and simulating inflation starting from that day).</p>
+<blockquote>
+<div><img alt="../../../_images/issuance-3.jpg" src="../../../_images/issuance-3.jpg" />
+<img alt="../../../_images/issuance-4.png" src="../../../_images/issuance-4.png" />
+<img alt="../../../_images/issuance-5.jpg" src="../../../_images/issuance-5.jpg" />
+<img alt="../../../_images/issuance-6.png" src="../../../_images/issuance-6.png" />
+</div></blockquote>
+<p>The above chart and release plan for ERB’s total issuance of 600MM and pre-allocation of 300MM will somewhat impact ERB’s circulation and market supply and demand dynamics.</p>
 </section>
 
 
@@ -522,23 +433,7 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewards-derived-from-circulation">Rewards Derived from Circulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-incentives-for-each-increment">Primary Incentives for Each Increment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-circulation">Total Circulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-s-reward">Validator’s Reward</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>

@@ -185,7 +185,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../guide/run.html">Run a node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/staking.html">Staking ERB</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/docs/wallet/">Wallet Docs</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/erbiedocs/wallet/">Wallet Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/explorer.html">Block Explorer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CSBT</span></p>
@@ -382,7 +382,7 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Write your ERC721 contract source code</p></li>
 <li><p>Open the compilation contract tool: <a class="reference external" href="https://remix.ethereum.org">Remix</a></p></li>
-<li><p>Prepare your node server and successfully deploy the erbie program.</p></li>
+<li><p>Prepare your node server and successfully deploy the <strong>erbie</strong> program.</p></li>
 </ol>
 <p>We take the <a class="reference external" href="https://solidity-by-example.org/app/erc721/">ERC-721</a> from solidity by example as a demonstration.</p>
 </section>
@@ -390,23 +390,23 @@ document.write(`
 <h2>Contract Deployment<a class="headerlink" href="#contract-deployment" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Use Remix to compile the contract source code.Open the Remix tool. Paste your ERC721 contract source code into Remix and compile it.</p></li>
-<li><p>The most important thing to execute a contract in erbie is to get the input bytecode, which indicates which interface you need to implement in the contract and what parameters need to be passed.</p></li>
+<li><p>The most important thing to execute a contract in <strong>erbie</strong> is to get the input bytecode, which indicates which interface you need to implement in the contract and what parameters need to be passed.</p></li>
 <li><p>Obtain contract Bytecode and ABI,After Remix is successfully compiled, get the generated contract bytecode (Contract bytecode) and ABI. This information will be used in the subsequent deployment and execution of the contract.</p></li>
 </ol>
 <img alt="../../../_images/erc721-1.png" src="../../../_images/erc721-1.png" />
 <ol class="arabic simple" start="4">
-<li><p>Create a deployment preparation file,When the erbie node program is started, a folder named contract will be generated in the same directory as the program. Go into the contract folder and create a file called contract.txt to store the compiled bytecode of the contract.</p></li>
+<li><p>Create a deployment preparation file,When the <strong>erbie</strong> node program is started, a folder named contract will be generated in the same directory as the program. Go into the contract folder and create a file called contract.txt to store the compiled bytecode of the contract.</p></li>
 <li><p>Write the contract bytecode to the file,Copy and paste the contract bytecode obtained in Remix into the contract.txt file.After saving and exiting.</p></li>
 </ol>
 <img alt="../../../_images/erc721-2.png" src="../../../_images/erc721-2.png" />
 <ol class="arabic simple" start="6">
-<li><p>Start the erbie program,Restart the erbie node program in the menu bar.</p></li>
+<li><p>Start the <strong>erbie</strong> program,Restart the <strong>erbie</strong> node program in the menu bar.</p></li>
 </ol>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="nx">tfs_v0</span><span class="mf">.32.0</span><span class="nx">_xxxx_testnet</span><span class="w"> </span><span class="o">-</span><span class="nx">m</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
-<li><p>In the erbie node program, choose to execute 8. Deploy contract operation. The address displayed by default is the wallet address of the deployer.</p></li>
+<li><p>In the <strong>erbie</strong> node program, choose to execute 8. Deploy contract operation. The address displayed by default is the wallet address of the deployer.</p></li>
 </ol>
 <p>Fill in the relevant information as prompted. If the initial input is a contract bytecode without parameters, fill in the parameter bytecode; otherwise fill in 0.</p>
 <ol class="arabic simple" start="8">
@@ -418,7 +418,7 @@ document.write(`
 <h2>Contract Execution<a class="headerlink" href="#contract-execution" title="Link to this heading">#</a></h2>
 <p>To execute a contract, you first need to be familiar with the internal parameters and methods of the contract. The following example uses the mint function as an example to call the contract to complete NFT casting.</p>
 <ol class="arabic simple">
-<li><p>In the erbie node program, choose to perform the 9. Call contract operation.</p></li>
+<li><p>In the <strong>erbie</strong> node program, choose to perform the 9. Call contract operation.</p></li>
 <li><p>Fill in the relevant information for executing the contract according to the interface and parameters of the contract, and complete the steps of executing the contract.</p></li>
 </ol>
 <img alt="../../../_images/erc721-3.png" src="../../../_images/erc721-3.png" />

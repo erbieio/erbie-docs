@@ -10,6 +10,7 @@ Incentive Allocation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ERB: Each block distributes incentives to 7 Validators and stakers staked to those validators.
+- Proportion：The Validator and Staker receive 7% and 93% of the block reward, respectively, while the Proposer receives the gas fee reward.
 
 
 Other Rewards: Users engaged in various activities within ErbieChain's ecosystem or contributing to ErbieChain have the opportunity to receive incentives such as ERB etc.

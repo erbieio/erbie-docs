@@ -185,7 +185,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../guide/run.html">Run a node</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/staking.html">Staking ERB</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/docs/wallet/">Wallet Docs</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/erbiedocs/wallet/">Wallet Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/explorer.html">Block Explorer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CSBT</span></p>
@@ -385,14 +385,14 @@ document.write(`
                   
   <section id="smart-contract-deployment-guide">
 <h1>Smart Contract Deployment Guide<a class="headerlink" href="#smart-contract-deployment-guide" title="Link to this heading">#</a></h1>
-<p>This chapter introduces how to publish your Token/NFT products or fungible tokens on the erbie main net. Before reading this chapter, please familiarize yourself with information about the Solidity language, the ERC20/ERC721 contract standard. You need to use the Remix tool to compile the contract source code. Make sure you have the contract’s source code ready to compile and deploy.</p>
+<p>This chapter introduces how to publish your Token/NFT products or fungible tokens on the <strong>erbie</strong> main net. Before reading this chapter, please familiarize yourself with information about the Solidity language, the ERC20/ERC721 contract standard. You need to use the Remix tool to compile the contract source code. Make sure you have the contract’s source code ready to compile and deploy.</p>
 <section id="illustrate">
 <h2>Illustrate<a class="headerlink" href="#illustrate" title="Link to this heading">#</a></h2>
 <p>To deploy a contract, please strictly adhere to the Ethereum ERC20/ERC721 contract standards. The types and methods defined in the contract should be named according to the standard.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><strong>CAUTION</strong></p></li>
-<li><p>erbie blockchain browser currently does not support parsing custom parameter types and function methods.</p></li>
+<li><p><strong>erbie</strong> blockchain browser currently does not support parsing custom parameter types and function methods.</p></li>
 </ul>
 </div></blockquote>
 <p>The reference code is as follows:</p>
@@ -445,7 +445,7 @@ document.write(`
 <blockquote>
 <div><ul class="simple">
 <li><p>A tradable and running Validator</p></li>
-<li><p>An account with a certain amount of TTOS coins to pay the gas fees generated during the deployment process.</p></li>
+<li><p>An account with a certain amount of ERB coins to pay the gas fees generated during the deployment process.</p></li>
 <li><p>The binary code of the contract which is Bytecode or Calldata in Remix IDE</p></li>
 <li><p>A string of hexadecimal digits (as shown in the following figure).</p></li>
 </ul>
@@ -500,11 +500,6 @@ Please be aware of the following information before proceeding:</p>
 <li><p>Enter the tip to be paid to the contract deployment address. 0 can be entered, but if the Tip is not 0, the tip must not be less than the gas fee.</p></li>
 <li><p>Enter the fees to be paid to the contract.0 can be entered.</p></li>
 </ol>
-<ul>
-<li><p><strong>TIPS:</strong></p>
-<p><strong>Pay attention to unit conversion</strong> If the balance is displayed as 999.92064300, that is 99,992,064,300 contract transfer units. If you want to pay contract 100TTOS, enter 10,000,000,000; If 100 is entered, the actual payment will be made to the contract 0.000001TTOS.</p>
-</li>
-</ul>
 </div></blockquote>
 </section>
 </section>

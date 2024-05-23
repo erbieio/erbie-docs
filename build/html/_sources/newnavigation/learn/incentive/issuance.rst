@@ -1,64 +1,38 @@
 Circulation
 ============================================================
 
-- Circulation refers to the number of crypto assets minted by the protocol to incentivize its participants.
-- With each block produced, a specific number of ERBs are generated, which is reduced by a certain percentage each year.
+**The ErbieChain's Inflation Schedule is uniquely described by three parameters: Initial Inflation Rate, Disinflation Rate and Long-term Inflation Rate.**
 
-Rewards Derived from Circulation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The circulating supply is the quantity of ERBs minted by the protocol to incentivize its participants. Taking into account actions such as burning transaction fees, the net increase in supply is sometimes referred to as inflation or supply growth. After each successful creation of standard blocks, seven validators are randomly selected to receive 0.16 ERBs each, and four are randomly chosen to receive one SNFT L0 each from the SNFT staking list.
+A large portion of the ERB issued via inflation will be distributed to stake-holders in proportion to the ERB they have staked. We want to ensure that the Inflation Schedule design results in reasonable Staking Yields for token holders who delegate ERB and for validation service providers (via commissions taken from Staking Yields).
 
-Primary Incentives for Each Increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Incentives for mining (rewards in ERBs for Validators successfully participating in the consensus, and SNFT incentives for Stakers that are proportionally converted to ERBs) are tied to ErbieChain's inflation curve. This curve starts with 300M ERBs at the genesis block. In the first year, approximately 43.64M ERBs are mined (this number is an estimate as the behavior of users in exchanging assets is unpredictable). In each subsequent year, due to a reduction in mining rewards and a decline in the SNFT exchange rate (15% per year), the yield of ERB will increasingly diminish. After about 20 years from the creation of the network, a total of approximately 279.69M ERBs will have been mined.
+The primary driver of Staked Yield is the amount of ERB staked divided by the total amount of ERB (% of total ERB staked). Therefore the distribution and delegation of tokens across validators are important factors to understand when determining initial inflation parameters.
 
-As a result, the total supply in years after start-up is as follows:
+The rate at which we expect network usage to grow, as a consideration to the disinflationary rate. Over time, we plan for inflation to drop and expect that usage will grow.
 
-====================      ===================
-Years After Start-up        Total Supply      
-====================      ===================
-0                           300M
-0-1                         343.64M
-1-2                         380.74M
-2-3                         412.28M
-====================      ===================
+**Based on these considerations, the Erbie team has formulated the following inflation plan parameters:**
 
-The inflation chart below shows the annual percentage of supply increase due to inflation.
+  - Overall token issuance: 600000000 ERB
+  - Genesis block initial circulation volume: 300000000ERB
+  - Initial Inflation Rate: 8%
+  - Disinflation Rate: -8%
+  - Long-term Inflation Rate: Infinite trend 0%
 
-.. image:: inflation.png
+These parameters define the proposed Inflation Schedule. Below we show implications of these parameters. These plots only show the impact of inflation issuances given the Inflation Schedule as parameterized above. They do not account for other factors that may impact the Total Supply such as fee/rent burning, slashing or other unforeseen future token destruction events. Therefore, what is presented here is an upper limit on the amount of ERB issued via inflation.
 
-Total Circulation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    .. image:: issuance-1.jpg
 
-Under the ideal conditions we assume, the ErbieChain protocol is designed to have a maximum total supply of 579.69M over 20 years.
+In the above graph we see the annual inflation rate percentage over time, given the inflation parameters proposed above.
 
-.. image:: total_amount_l1.png
+    .. image:: issuance-2.jpg
 
+Similarly, here we see the Total Current Supply of ERB [MM] over time, assuming an initial Total Current Supply of 300000000ERB (i.e. for this example, taking the Total Current Supply as of 2024-05-31 and simulating inflation starting from that day).
 
-Validator's Reward
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    .. image:: issuance-3.jpg
 
-Similarly to the supply calculation, we can calculate the expected annual percentage reward for a validator's participation in the ErbieChain protocol.
+    .. image:: issuance-4.png
 
-Given the unique nature of the ErbieChain DRE algorithm, a consensus requires the participation of 11 validators. Using this number as a baseline, assuming a full net staking rate, and considering a certain increase in linear indices, we can generate the following data table.
+    .. image:: issuance-5.jpg
 
-===========   ==========================================   ===================================================
-Stake Rate     Number of Stakers (pre-estimated)            Annual rate of Rateeturn (pre-estimated)                                               
-===========   ==========================================   ===================================================
-0.30%	            11 	                                        406.7%
-1.20%	            99 	                                        101.7%
-2.10%	            174 	                                    58.1%
-3.00%	            248 	                                    40.7%
-3.90%	            323 	                                    31.3%
-4.80%	            397 	                                    25.4%
-5.70%	            471 	                                    21.4%
-6.60%	            546 	                                    18.5%
-7.50%	            620 	                                    16.3%
-8.40%	            695 	                                    14.5%
-9.30%	            769 	                                    13.1%
-10.20%	            844 	                                    12.0%
-===========   ==========================================   ===================================================
+    .. image:: issuance-6.png
 
-The curves drawn from the above table are as follows:
-
-.. image:: validatorincome.png
+The above chart and release plan for ERB's total issuance of 600MM and pre-allocation of 300MM will somewhat impact ERB's circulation and market supply and demand dynamics.
