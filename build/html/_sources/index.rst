@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 
-.. image:: index.png
+.. image:: index.jpg
 
 
 Content

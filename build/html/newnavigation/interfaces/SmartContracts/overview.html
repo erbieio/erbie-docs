@@ -1,0 +1,568 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Overview &#8212; Erbie Blockchain</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/local.css?v=0b0e7493" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'newnavigation/interfaces/SmartContracts/overview';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Smart Contract Deployment Guide" href="deploymentguide.html" />
+    <link rel="prev" title="Smart Contracts" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Erbie Blockchain</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../basic/basic.html">What is Erbie?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/glossary.html">Erbie’s Glossary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../learn/consensus/index.html">DRE Consensus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/consensus/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/consensus/dre.html">Dynamic Random Election Algorithm (DRE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/consensus/pos.html">Weighted Proof of Stake (WPoS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/consensus/bft.html">Byzantine Fault-Tolerant (BFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/consensus/flow.html">Consensus Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/consensus/faq.html">Frequently Asked Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../learn/incentive/index.html">Incentive Layer</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/incentive/stake.html">Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/incentive/balance.html">Balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/incentive/issuance.html">Circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/incentive/rewards.html">Incentive Mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/incentive/penalties.html">Punishment Mechanisms</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../learn/network/index.html">Network Layer</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/network/p2p.html">Blackhole Block Message Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/network/gossip.html">Gossip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/network/synch.html">Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../learn/block/index.html">Data structure</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/block/hashtreeroots.html">Merkle Patricia Trie</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../guide/run.html">Run a node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/staking.html">Staking ERB</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.erbie.io/docs/wallet/">Wallet Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/explorer.html">Block Explorer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSBT</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../csbt/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csbt/datausecase.html">Data Usecase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csbt/assetization.html">Assetization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interfaces</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Smart Contracts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploymentguide.html">Smart Contract Deployment Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="erc20.html">ERC20 contract deployment Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="erc721.html">ERC721 contract deployment Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../OpenAPI/index.html">Erbie’s OpenAPI</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../OpenAPI/transfercsbt.html">Transfer CSBT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OpenAPI/withdrawerb.html">Withdraw ERB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OpenAPI/stake.html">Validator and Staker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OpenAPI/unstake.html">Release the pledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OpenAPI/recoverweight.html">Recover online weight</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/erbieio/erb-client">SDK of ErbieChain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data%26analysis.html">Data and Analysis</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/newnavigation/interfaces/SmartContracts/overview.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Overview</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-smart-contracts">Introduction to Smart Contracts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-smart-contract">Features of Smart Contract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-smart-contracts">Advantages of Smart Contracts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-contract-in-transformers-chain">Smart contract in Transformers chain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-before-writing-contracts">Preparation before writing contracts</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
+<p>On the Transformers chain, the deployment of smart contracts needs to be written in Solidity language. After deployment, the contract will generate an account that contains two addresses:
+<strong>one is address encoded with base58</strong> and begins with the number 1, which is used for interaction with the Transformers chain.
+<strong>the other one is a 34 byte hexadecimal address</strong>, which is only used for interacting with smart contracts , like a regular wallet account, it has a balance and transaction actions, the difference is that the account of the smart contract itself cannot be controlled by anyone, and all its actions (including transactions) can only be controlled by codes.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>TIP</strong></p></li>
+<li><p>TTOS main network coin transactions use the TTOS address by base58.</p></li>
+<li><p>The address parameters filled in during contract transactions need to use the hexadecimal EVM address.</p></li>
+</ul>
+</div></blockquote>
+<section id="introduction-to-smart-contracts">
+<h2>Introduction to Smart Contracts<a class="headerlink" href="#introduction-to-smart-contracts" title="Link to this heading">#</a></h2>
+<p>A smart contract is a computer protocol intended to digitally facilitate, verify, or enforce the negotiation or performance of a contract. Smart contracts allow trusted transactions and agreements to be performed among disparate, anonymous parties without the need for a central authority. The purpose of smart contracts is to provide better security methods that is superior to traditional contracts and reduce other transaction costs related to contracts.</p>
+</section>
+<section id="features-of-smart-contract">
+<h2>Features of Smart Contract<a class="headerlink" href="#features-of-smart-contract" title="Link to this heading">#</a></h2>
+<p><strong>Formalism</strong>: Smart contracts are based on computer code that minimizes language ambiguity and presents a tight logical structure. The content and execution process are transparent and visible to all nodes, which can observe, record, and verify the contract status through a user interface.</p>
+<p><strong>Irreversibility</strong>: Once the conditions are met, the contract will automatically execute the expected plan. Under the given fact input, the smart contract will inevitably output the correct results and be visualized in the display horizon.</p>
+<p><strong>Non-Fungibility</strong>: The transaction information on the blockchain is open and transparent. Each node can trace the transaction process recorded on the blockchain,making the probability of default is extremely low.</p>
+<p><strong>Anonymity</strong>: According to the cryptography principle of asymmetric encryption, zero-knowledge proof, ring signature, and blind signature, transactions on the blockchain are public, but the transaction parties are anonymous.</p>
+</section>
+<section id="advantages-of-smart-contracts">
+<h2>Advantages of Smart Contracts<a class="headerlink" href="#advantages-of-smart-contracts" title="Link to this heading">#</a></h2>
+<p><strong>First of all, it removed the intermediary.</strong></p>
+<p>Allow users to establish contracts independently based on technology.</p>
+<p><strong>Second, transparency and fairness.</strong></p>
+<p>The Smart Contract use code to write the conditions clearly and record them on the blockchain. The whole process is executed by the program, and even the developer who wrote the code cannot tamper with it.</p>
+<p><strong>Third, flexibility.</strong></p>
+<p>Smart contracts allows users to establish contracts freely, even with strangers globally. In general, smart contracts are one of the core technologies of blockchain, not only playing an executive role in blockchain but also but also expanding the usage scenarios of the blockchain. Because of it`s existence, the blockchain has a broader stage.</p>
+</section>
+<section id="smart-contract-in-transformers-chain">
+<h2>Smart contract in Transformers chain<a class="headerlink" href="#smart-contract-in-transformers-chain" title="Link to this heading">#</a></h2>
+<p>The smart contract language used by Transformers chain is Solidity which is an object-oriented high-level programming language. The EVM adopted by Transformers supports most of the features of the Solidity standard, and has supported ERC-20, ERC-721, ERC-3525 and other contract standards. Compared with Ethereum, the implementation cost of Transformers contract is lower and the on-chain speed is faster. Other features have been adjusted due to the Transformers’s architecture model.</p>
+<p>The specific differences are as follows:</p>
+<p>The basic unit of transfer for TTOS currency in the contract is $1^-8TTOS.
+For example, there are a total of 999.92064300 TTOS, or 99,992,064,300 contract transfer units.</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span><span class="nx">Balance</span><span class="p">:</span><span class="w"> </span><span class="mf">999.92064300</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The contract does not support block variables and tx variables.</p></li>
+<li><p>The balance attribute value of the address type variable is for reference only and is not recommended for use.</p></li>
+<li><p>The type(X) expression only provides limited support and is not recommended for use.</p></li>
+<li><p>Prohibit depositing TTOS coins into contracts during contract deployment.</p>
+<ul>
+<li><p><strong>TIPS:</strong>
+Special options and requirements for executing smart contracts on the transformers chain:</p></li>
+<li><p>The gas fee for smart contracts does not require pre input, but if the balance is insufficient to pay for the gas fee, contract execution fails.</p></li>
+<li><p>You can pay a tip to the contract deployer while executing the contract, and the tip amount should not be less than the gas fee.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="preparation-before-writing-contracts">
+<h2>Preparation before writing contracts<a class="headerlink" href="#preparation-before-writing-contracts" title="Link to this heading">#</a></h2>
+<p>If you are not familiar with Solidity, you can refer to the following link to complete the study of Solidity:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://docs.soliditylang.org/en/latest/">Solidity document</a></p></li>
+<li><p><a class="reference external" href="https://ethervm.io/">EVM operation code</a></p></li>
+<li><p><a class="reference external" href="https://solidity-by-example.org/">Solidity Writing examples</a></p></li>
+</ul>
+</div></blockquote>
+<p>The deployment of smart contracts requires the contract source code to be compiled into EVM bytecode, so you should be familiar with the relevant tools for Solidity compilation. The following are the familiar Remix IDE tools that can compile Solidity online:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://remix.ethereum.org/">Remix</a></p></li>
+<li><p><a class="reference external" href="https://remix-ide.readthedocs.io/en/latest/">Remix document</a></p></li>
+</ul>
+</div></blockquote>
+<p>Transformers adopts the same standards as Ethereum smart contracts for Ethereum compatible smart contracts. Please read and learn EIP related standards (such as ERC-20) first, and refer to relevant implementation examples to write your own contract.</p>
+<p>The reference link is as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ethereum/EIPs/tree/master/EIPS">EIP</a></p></li>
+<li><p><a class="reference external" href="https://eips.ethereum.org/erc">ERC</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token">OpenZeppelin</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Smart Contracts</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="deploymentguide.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Smart Contract Deployment Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-smart-contracts">Introduction to Smart Contracts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-smart-contract">Features of Smart Contract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-smart-contracts">Advantages of Smart Contracts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-contract-in-transformers-chain">Smart contract in Transformers chain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-before-writing-contracts">Preparation before writing contracts</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By @Erbie
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Erbie.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 .. toctree::
    :titlesonly:
 
-   contractsAPI
+   SmartContracts/index
 
 .. toctree::
    :titlesonly:

@@ -40,5 +40,5 @@ Recommended specifications
 Spinning up the node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before installing the client, make sure that your computer has enough resources to run it. For detailed steps, you can refer to the `Start a node on ErbieChain <https://www.erbie.io/docs/install/run/deploy/index.html>`_ documentation page, which provides a comprehensive guide to all the necessary steps involved in running a node and participating as a validator.
+Before installing the client, make sure that your computer has enough resources to run it. For detailed steps, you can refer to the `Start a node on ErbieChain <https://www.erbie.io/erbiedocs/install/run/deploy/index.html>`_ documentation page, which provides a comprehensive guide to all the necessary steps involved in running a node and participating as a validator.
 

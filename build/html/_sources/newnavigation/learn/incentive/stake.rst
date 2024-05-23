@@ -1,13 +1,13 @@
 Staking
 ======================================================================
 
-- The equilibrium of 70,000 ERB stakes exists as a trade-off between network costs, the number of validators, and the total ERB circulation.
+- The equilibrium of 35,000 ERB stakes exists as a trade-off between network costs, the number of validators, and the total ERB circulation.
 - The stake offers economic finality: a quantifiable measure of chain security.
 
 Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Staking in the ErbieChain protocol requires a Validator to lock at least 70,000 ERBs for a specified period.
+The conditions for an Erbie qualified node are as follows: the Validator must self-stake 350 ERB and the Staker must delegate a stake of 35,000 ERB. When the Validator initiates the node and completes the self-staking of 350 ERB, the node will begin synchronizing with the Erbie network. Once it reaches the latest block height, it can accept the ERB stakes from the Stakers. After the total stake reaches 35,000 ERB, the node will start participating in the DRE consensus and earning inflation rewards.
 
 ErbieChain operates as a permissionless system, which means that anyone can participate. Such systems need a method to distribute influence among participants. To prevent individuals from creating an excessive number of duplicate identities and overloading the chain, there must be a cost associated with identity creation. In a proof-of-stake system like ErbieChain, participants must stake coins, a limited resource, on the chain.
 
