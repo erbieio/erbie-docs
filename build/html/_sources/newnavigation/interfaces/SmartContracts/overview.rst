@@ -1,8 +1,8 @@
 Overview
 ==============
 
-On the Transformers chain, the deployment of smart contracts needs to be written in Solidity language. After deployment, the contract will generate an account that contains two addresses:
-**one is address encoded with base58** and begins with the number 1, which is used for interaction with the Transformers chain.
+On the erbie chain, the deployment of smart contracts needs to be written in Solidity language. After deployment, the contract will generate an account that contains two addresses:
+**one is address encoded with base58** and begins with the number 1, which is used for interaction with the erbie chain.
 **the other one is a 34 byte hexadecimal address**, which is only used for interacting with smart contracts , like a regular wallet account, it has a balance and transaction actions, the difference is that the account of the smart contract itself cannot be controlled by anyone, and all its actions (including transactions) can only be controlled by codes.
 
   - **TIP**
@@ -42,10 +42,10 @@ The Smart Contract use code to write the conditions clearly and record them on t
 
 Smart contracts allows users to establish contracts freely, even with strangers globally. In general, smart contracts are one of the core technologies of blockchain, not only playing an executive role in blockchain but also but also expanding the usage scenarios of the blockchain. Because of it`s existence, the blockchain has a broader stage.
 
-Smart contract in Transformers chain
+Smart contract in erbie chain
 -------------------------------------------
 
-The smart contract language used by Transformers chain is Solidity which is an object-oriented high-level programming language. The EVM adopted by Transformers supports most of the features of the Solidity standard, and has supported ERC-20, ERC-721, ERC-3525 and other contract standards. Compared with Ethereum, the implementation cost of Transformers contract is lower and the on-chain speed is faster. Other features have been adjusted due to the Transformers’s architecture model.
+The smart contract language used by erbie chain is Solidity which is an object-oriented high-level programming language. The EVM adopted by Transformers supports most of the features of the Solidity standard, and has supported ERC-20, ERC-721, ERC-3525 and other contract standards. Compared with Ethereum, the implementation cost of Transformers contract is lower and the on-chain speed is faster. Other features have been adjusted due to the Transformers’s architecture model.
 
 The specific differences are as follows:
 
@@ -65,7 +65,7 @@ For example, there are a total of 999.92064300 TTOS, or 99,992,064,300 contract 
 - Prohibit depositing TTOS coins into contracts during contract deployment.
 
   - **TIPS:**
-    Special options and requirements for executing smart contracts on the transformers chain:
+    Special options and requirements for executing smart contracts on the erbie chain:
 
   - The gas fee for smart contracts does not require pre input, but if the balance is insufficient to pay for the gas fee, contract execution fails.
 
@@ -88,7 +88,7 @@ The deployment of smart contracts requires the contract source code to be compil
 
   - `Remix document <https://remix-ide.readthedocs.io/en/latest/>`_
 
-Transformers adopts the same standards as Ethereum smart contracts for Ethereum compatible smart contracts. Please read and learn EIP related standards (such as ERC-20) first, and refer to relevant implementation examples to write your own contract.
+erbie adopts the same standards as Ethereum smart contracts for Ethereum compatible smart contracts. Please read and learn EIP related standards (such as ERC-20) first, and refer to relevant implementation examples to write your own contract.
 
 The reference link is as follows:
 

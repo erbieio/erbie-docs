@@ -15,7 +15,7 @@ Contract Deployment
 
     .. image:: erc20-2.png
 
-4. Record or create a text document to save the necessary auxiliary information for deployment on the host where the transformers program is located. For text files, they can be placed in the default folder specified by the program.
+4. Record or create a text document to save the necessary auxiliary information for deployment on the host where the erbie program is located. For text files, they can be placed in the default folder specified by the program.
 
     .. image:: erc20-3.png
 

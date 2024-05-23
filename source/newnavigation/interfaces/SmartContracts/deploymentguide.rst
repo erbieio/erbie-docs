@@ -1,7 +1,7 @@
 Smart Contract Deployment Guide
 =================================
 
-This chapter introduces how to publish your Token/NFT products or fungible tokens on the transformers main net. Before reading this chapter, please familiarize yourself with information about the Solidity language, the ERC20/ERC721 contract standard. You need to use the Remix tool to compile the contract source code. Make sure you have the contract's source code ready to compile and deploy.
+This chapter introduces how to publish your Token/NFT products or fungible tokens on the erbie main net. Before reading this chapter, please familiarize yourself with information about the Solidity language, the ERC20/ERC721 contract standard. You need to use the Remix tool to compile the contract source code. Make sure you have the contract's source code ready to compile and deploy.
 
 Illustrate
 ----------------
@@ -9,7 +9,7 @@ Illustrate
 To deploy a contract, please strictly adhere to the Ethereum ERC20/ERC721 contract standards. The types and methods defined in the contract should be named according to the standard.
 
   - **CAUTION**
-  - Transformers blockchain browser currently does not support parsing custom parameter types and function methods.
+  - erbie blockchain browser currently does not support parsing custom parameter types and function methods.
 
 The reference code is as follows:
 
@@ -73,7 +73,7 @@ What is required before deploy contracts?
 
 .. image:: smart-1.png
 
-  - Start Transformers validator node,generated contract folder in current directory of the program.Placed the binary code generated from the contract into the contract file in the directory.
+  - Start erbie validator node,generated contract folder in current directory of the program.Placed the binary code generated from the contract into the contract file in the directory.
 
 Example: The content of the contract file is similar to the following figure.
 
