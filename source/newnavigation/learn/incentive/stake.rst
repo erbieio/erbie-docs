@@ -33,7 +33,7 @@ The ErbieChain ecosystem incorporates two staking processes. In essence, these t
 Stake Size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each validator who can participant verification blocks in the ErbieChain system must lock at least 70,000 ERB.
+Each validator who can participant verification blocks in the ErbieChain system must lock at least 35,000 ERB.
 
 This figure is a compromise, small enough to allow wide participation, but sufficiently large to prevent an overload of validators. Essentially, by reducing stakes, we may permit stakeholders to operate more expensive hardware on a higher bandwidth network, increasing the risk of centralization.
 

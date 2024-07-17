@@ -24,7 +24,7 @@ Staking involves the immobilization of your ERB assets on the ErbieChain blockch
 
 Validator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Validators are a crucial component of the ErbieChain network infrastructure. They perform key tasks such as block creation, participation in block and state verification, storage of all blockchain data, transaction processing, and providing services and data to the network. A minimum stake of 70,000 ERB is required to activate validator software.
+Validators are a crucial component of the ErbieChain network infrastructure. They perform key tasks such as block creation, participation in block and state verification, storage of all blockchain data, transaction processing, and providing services and data to the network. A minimum stake of 35,000 ERB is required to activate validator software.
 
 Staker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

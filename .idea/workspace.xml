@@ -6,18 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="05082f94-1bd8-4bca-bf44-e46a3a9ca0dc" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/guide/explorer.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/guide/explorer.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/guide/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/guide/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/guide/run.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/guide/run.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/interfaces/SmartContracts/deploymentguide.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/interfaces/SmartContracts/deploymentguide.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/interfaces/SmartContracts/erc20.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/interfaces/SmartContracts/erc20.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/interfaces/SmartContracts/erc721.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/interfaces/SmartContracts/erc721.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/interfaces/SmartContracts/overview.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/interfaces/SmartContracts/overview.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/interfaces/contractsAPI.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/interfaces/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/interfaces/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/learn/incentive/issuance.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/learn/incentive/issuance.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/learn/incentive/rewards.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/learn/incentive/rewards.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/newnavigation/guide/staking.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/newnavigation/guide/staking.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/newnavigation/guide/staking.rst" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/newnavigation/guide/staking.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/guide/staking.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/guide/staking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/newnavigation/basic/glossary.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/basic/glossary.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/newnavigation/guide/staking.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/guide/staking.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/newnavigation/learn/incentive/stake.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/learn/incentive/stake.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
