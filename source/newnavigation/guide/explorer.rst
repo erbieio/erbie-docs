@@ -1,4 +1,4 @@
 Block Explorer
 ==================
 
-`Block Explorer <https://www.erbie.io/explorer/home>`_
+`Block Explorer <https://www.erbie.io/explorer>`_

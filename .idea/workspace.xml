@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="05082f94-1bd8-4bca-bf44-e46a3a9ca0dc" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/learn/consensus/dre.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/learn/consensus/dre.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/newnavigation/learn/incentive/rewards.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/learn/incentive/rewards.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/newnavigation/guide/explorer.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/newnavigation/guide/explorer.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/newnavigation/guide/explorer.rst" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/newnavigation/guide/explorer.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/newnavigation/guide/explorer.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/newnavigation/guide/explorer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/newnavigation/guide/explorer.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/newnavigation/guide/explorer.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
